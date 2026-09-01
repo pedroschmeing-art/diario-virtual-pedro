@@ -760,15 +760,11 @@ section {
 
     margin: 20px 0;
 
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        white,
-        var(--orange)
-    );
-
-    -webkit-background-clip: text;
-    color: transparent;
+    background: linear-gradient(90deg, #00aaff, #ffffff, #ff6500);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+color: transparent;
 }
 
 .connection-content > p {
