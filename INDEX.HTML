@@ -1,120 +1,507 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futebol e Naruto</title>
 
-    <title>Paixões que fazem parte de mim</title>
+    <style>
 
-    <link rel="stylesheet" href="style.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #050505;
+            color: white;
+        }
+
+        /* MENU */
+
+        header {
+            background-color: #02050a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #008cff;
+        }
+
+        header h1 {
+            color: #008cff;
+            margin-bottom: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #008cff;
+        }
+
+        /* INICIO */
+
+        .inicio {
+            min-height: 500px;
+            padding: 100px 20px;
+            text-align: center;
+
+            background-color: #070b12;
+            border-bottom: 5px solid #ff6500;
+        }
+
+        .inicio h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .azul {
+            color: #008cff;
+        }
+
+        .laranja {
+            color: #ff6500;
+        }
+
+        .inicio p {
+            max-width: 700px;
+            margin: auto;
+            color: #cccccc;
+            font-size: 18px;
+        }
+
+        .botoes {
+            margin-top: 30px;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 14px 25px;
+            margin: 8px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .botao-azul {
+            background-color: #0066cc;
+        }
+
+        .botao-laranja {
+            background-color: #e65100;
+        }
+
+        /* SEÇÕES */
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .titulo h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .titulo p {
+            color: #aaaaaa;
+        }
+
+        /* FUTEBOL */
+
+        .futebol {
+            background-color: #080d15;
+        }
+
+        .conteudo {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .futebol-texto {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .futebol-texto p {
+            color: #cccccc;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        /* GRÊMIO */
+
+        .gremio {
+            background-color: #00152b;
+            border-top: 5px solid #008cff;
+            border-bottom: 5px solid white;
+        }
+
+        .gremio h2 {
+            color: #008cff;
+        }
+
+        .gremio-box {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+
+            background-color: #05080d;
+
+            border: 2px solid #008cff;
+            border-radius: 15px;
+
+            text-align: center;
+        }
+
+        .escudo {
+            width: 120px;
+            height: 120px;
+
+            margin: auto;
+            margin-bottom: 25px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #008cff;
+
+            border: 8px solid white;
+
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .gremio-box h3 {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .gremio-box p {
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .card {
+            width: 200px;
+            padding: 25px;
+
+            background-color: #0a0f17;
+
+            border: 1px solid #008cff;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            color: #008cff;
+            margin-bottom: 10px;
+        }
+
+        /* NARUTO */
+
+        .naruto {
+            background-color: #180700;
+            border-top: 5px solid #ff6500;
+        }
+
+        .naruto h2 {
+            color: #ff6500;
+        }
+
+        .naruto-texto {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .naruto-texto p {
+            color: #cccccc;
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .naruto-destaque {
+            margin-top: 40px;
+            padding: 35px;
+
+            background-color: #0a0503;
+
+            border: 2px solid #ff6500;
+            border-radius: 15px;
+        }
+
+        .naruto-destaque h3 {
+            color: #ff6500;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        /* PERSONAGENS */
+
+        .personagens {
+            background-color: #050505;
+        }
+
+        .personagens-grid {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .personagem {
+            padding: 30px 20px;
+            min-height: 430px;
+
+            background-color: #0c0c0c;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .personagem:hover {
+            transform: translateY(-8px);
+        }
+
+        .personagem .icone {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .personagem h3 {
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .personagem h4 {
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .personagem p {
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+
+        /* CORES DOS PERSONAGENS */
+
+        .naruto-card {
+            border: 2px solid #ff6500;
+        }
+
+        .naruto-card h3,
+        .naruto-card h4 {
+            color: #ff6500;
+        }
+
+        .obito-card {
+            border: 2px solid #7020a0;
+            background-color: #0c0710;
+        }
+
+        .obito-card h3,
+        .obito-card h4 {
+            color: #a84cff;
+        }
+
+        .kakashi-card {
+            border: 2px solid #428dcc;
+            background-color: #070d14;
+        }
+
+        .kakashi-card h3,
+        .kakashi-card h4 {
+            color: #55b5ff;
+        }
+
+        .itachi-card {
+            border: 2px solid #a00000;
+            background-color: #100303;
+        }
+
+        .itachi-card h3,
+        .itachi-card h4 {
+            color: #ff3030;
+        }
+
+        /* FRASE FINAL */
+
+        .final {
+            padding: 100px 20px;
+
+            text-align: center;
+
+            background-color: #02050a;
+        }
+
+        .final h2 {
+            font-size: 40px;
+            margin-bottom: 25px;
+            color: #008cff;
+        }
+
+        .final p {
+            color: #bbbbbb;
+            font-size: 18px;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            padding: 35px 20px;
+            text-align: center;
+            background-color: #020202;
+            border-top: 1px solid #222222;
+        }
+
+        footer p {
+            color: #777777;
+            margin-top: 10px;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 900px) {
+
+            .personagens-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .inicio h2 {
+                font-size: 35px;
+            }
+
+            .personagens-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 13px;
+            }
+
+            .gremio-box {
+                padding: 25px 15px;
+            }
+
+        }
+
+    </style>
 </head>
 
 <body>
 
     <!-- MENU -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="logo">
-                <span>⚽</span> PAIXÕES
-            </div>
 
-            <ul class="menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#futebol">Futebol</a></li>
-                <li><a href="#gremio">Grêmio</a></li>
-                <li><a href="#naruto">Naruto</a></li>
-                <li><a href="#personagens">Personagens</a></li>
-            </ul>
+    <header>
+
+        <h1>⚽ MINHAS PAIXÕES 🍥</h1>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#futebol">Futebol</a>
+            <a href="#gremio">Grêmio</a>
+            <a href="#naruto">Naruto</a>
+            <a href="#personagens">Personagens</a>
         </nav>
+
     </header>
 
 
-    <!-- HERO -->
-    <section id="inicio" class="hero">
+    <!-- INÍCIO -->
 
-        <div class="hero-content">
-            <p class="small-title">MINHAS DUAS GRANDES PAIXÕES</p>
+    <section class="inicio" id="inicio">
 
-            <h1>
-                FUTEBOL
-                <span>&</span>
-                NARUTO
-            </h1>
+        <h2>
+            FUTEBOL
+            <span class="azul">+</span>
+            <span class="laranja">NARUTO</span>
+        </h2>
 
-            <p class="hero-text">
-                Entre a emoção de uma partida de futebol e a determinação
-                de um ninja, existem histórias que fazem parte da minha personalidade.
-            </p>
+        <p>
+            Duas paixões que representam emoção, determinação,
+            amizade, superação e vontade de vencer.
+        </p>
 
-            <div class="hero-buttons">
-                <a href="#gremio" class="btn blue">Conheça o Grêmio</a>
-                <a href="#naruto" class="btn orange">Conheça Naruto</a>
-            </div>
-        </div>
+        <div class="botoes">
 
-        <div class="hero-symbol">
-            <div class="circle-sharingan">写輪眼</div>
+            <a href="#gremio" class="botao botao-azul">
+                🔵 Conhecer o Grêmio
+            </a>
+
+            <a href="#naruto" class="botao botao-laranja">
+                🍥 Conhecer Naruto
+            </a>
+
         </div>
 
     </section>
 
 
     <!-- FUTEBOL -->
-    <section id="futebol" class="section football-section">
 
-        <div class="section-title">
-            <p>⚽ PRIMEIRA PAIXÃO</p>
-            <h2>O MUNDO DO <span>FUTEBOL</span></h2>
+    <section class="futebol" id="futebol">
+
+        <div class="titulo">
+
+            <h2>⚽ Futebol</h2>
+
+            <p>Paixão que move milhões de pessoas</p>
+
         </div>
 
-        <div class="football-content">
+        <div class="conteudo futebol-texto">
 
-            <div class="football-text">
-                <h3>Mais que um esporte</h3>
+            <p>
+                O futebol é um dos esportes mais populares do mundo.
+                Ele reúne pessoas, cria rivalidades e proporciona
+                momentos inesquecíveis.
+            </p>
 
-                <p>
-                    O futebol é muito mais do que uma partida. É emoção,
-                    rivalidade, amizade, superação e paixão. Para milhões de
-                    pessoas, torcer por um clube significa fazer parte de uma
-                    história.
-                </p>
-
-                <p>
-                    Cada jogo traz uma nova emoção. Um gol pode transformar
-                    completamente o ambiente e unir milhares de torcedores
-                    em uma única voz.
-                </p>
-
-                <div class="stats">
-                    <div>
-                        <strong>⚽</strong>
-                        <span>Paixão</span>
-                    </div>
-
-                    <div>
-                        <strong>🔥</strong>
-                        <span>Emoção</span>
-                    </div>
-
-                    <div>
-                        <strong>🏆</strong>
-                        <span>Conquistas</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="football-card">
-                <div class="ball">⚽</div>
-                <h3>FUTEBOL</h3>
-                <p>
-                    Um esporte capaz de unir pessoas,
-                    criar memórias e despertar paixões.
-                </p>
-            </div>
+            <p>
+                Para um torcedor, futebol não é apenas assistir a uma
+                partida. É acompanhar seu time, comemorar as vitórias,
+                enfrentar as derrotas e continuar acreditando.
+            </p>
 
         </div>
 
@@ -122,59 +509,53 @@
 
 
     <!-- GRÊMIO -->
-    <section id="gremio" class="section gremio-section">
 
-        <div class="section-title">
-            <p>🔵⚫ SEGUNDA PAIXÃO</p>
-            <h2>GRÊMIO <span>TRICOLOR</span></h2>
+    <section class="gremio" id="gremio">
+
+        <div class="titulo">
+
+            <h2>🔵⚫ Grêmio</h2>
+
+            <p>Tradição, paixão e história</p>
+
         </div>
 
-        <div class="gremio-grid">
+        <div class="gremio-box">
 
-            <div class="gremio-intro">
-                <div class="gremio-symbol">G</div>
+            <div class="escudo">G</div>
 
-                <h3>Grêmio Foot-Ball Porto Alegrense</h3>
+            <h3>Grêmio Foot-Ball Porto Alegrense</h3>
 
-                <p>
-                    O Grêmio é um dos clubes mais tradicionais do futebol
-                    brasileiro. Conhecido por sua camisa azul, preta e branca,
-                    possui uma história marcada por grandes conquistas,
-                    jogadores históricos e uma torcida apaixonada.
-                </p>
+            <p>
+                O Grêmio é um dos grandes clubes do futebol brasileiro.
+                Suas cores tradicionais são azul, preto e branco.
+            </p>
 
-                <p>
-                    O clube representa garra, tradição e paixão. Para o
-                    torcedor, cada partida é uma oportunidade de viver
-                    novamente a história do Tricolor.
-                </p>
-            </div>
+            <p>
+                O clube possui uma história marcada por grandes jogadores,
+                títulos importantes e uma torcida apaixonada.
+            </p>
 
+            <div class="cards">
 
-            <div class="gremio-info">
-
-                <div class="info-card">
-                    <span>🔵</span>
-                    <h3>AZUL</h3>
-                    <p>A cor que representa o Tricolor.</p>
+                <div class="card">
+                    <h3>🔵 Azul</h3>
+                    <p>Uma das principais cores do Tricolor.</p>
                 </div>
 
-                <div class="info-card">
-                    <span>⚫</span>
-                    <h3>PRETO</h3>
-                    <p>Força e identidade dentro de campo.</p>
+                <div class="card">
+                    <h3>⚫ Preto</h3>
+                    <p>Representa força e tradição.</p>
                 </div>
 
-                <div class="info-card">
-                    <span>⚪</span>
-                    <h3>BRANCO</h3>
-                    <p>Parte fundamental das cores do clube.</p>
+                <div class="card">
+                    <h3>⚪ Branco</h3>
+                    <p>Completa as cores tradicionais.</p>
                 </div>
 
-                <div class="info-card">
-                    <span>🏆</span>
-                    <h3>HISTÓRIA</h3>
-                    <p>Uma trajetória marcada por grandes conquistas.</p>
+                <div class="card">
+                    <h3>🏆 História</h3>
+                    <p>Um clube com grandes conquistas.</p>
                 </div>
 
             </div>
@@ -185,55 +566,39 @@
 
 
     <!-- NARUTO -->
-    <section id="naruto" class="section naruto-section">
 
-        <div class="naruto-background"></div>
+    <section class="naruto" id="naruto">
 
-        <div class="section-title naruto-title">
-            <p>🍥 OUTRA GRANDE PAIXÃO</p>
+        <div class="titulo">
 
-            <h2>
-                O MUNDO DE
-                <span>NARUTO</span>
-            </h2>
+            <h2>🍥 Naruto</h2>
+
+            <p>O caminho ninja da determinação</p>
+
         </div>
 
-        <div class="naruto-content">
+        <div class="naruto-texto">
 
-            <div class="naruto-text">
+            <p>
+                Naruto Uzumaki é um jovem ninja que cresceu enfrentando
+                dificuldades e buscando o reconhecimento das pessoas
+                de sua vila.
+            </p>
+
+            <p>
+                Mesmo sendo rejeitado no começo de sua jornada, Naruto
+                nunca abandonou seus sonhos. Sua determinação fez com
+                que ele evoluísse e conquistasse o respeito de seus
+                companheiros.
+            </p>
+
+            <div class="naruto-destaque">
 
                 <h3>“Eu nunca volto atrás com a minha palavra.”</h3>
 
                 <p>
-                    Naruto conta a história de Naruto Uzumaki, um jovem ninja
-                    que cresceu enfrentando dificuldades e sendo rejeitado
-                    pelas pessoas de sua vila.
-                </p>
-
-                <p>
-                    Mesmo assim, Naruto nunca desistiu de seus objetivos.
-                    Com determinação, amizade e muito esforço, ele busca
-                    conquistar o respeito de todos e realizar seu sonho
-                    de se tornar Hokage.
-                </p>
-
-                <p>
-                    A história mostra temas como amizade, perda, superação,
-                    escolhas e a importância de nunca abandonar seus sonhos.
-                </p>
-
-            </div>
-
-            <div class="naruto-card">
-
-                <div class="naruto-logo">
-                    🍥
-                </div>
-
-                <h3>NARUTO UZUMAKI</h3>
-
-                <p>
-                    Determinação, coragem e vontade de nunca desistir.
+                    A determinação de Naruto é uma das características
+                    que mais representam sua personalidade.
                 </p>
 
             </div>
@@ -244,73 +609,68 @@
 
 
     <!-- PERSONAGENS -->
-    <section id="personagens" class="section characters-section">
 
-        <div class="section-title">
-            <p>👁️ LENDAS SHINOBI</p>
-            <h2>PERSONAGENS <span>INESQUECÍVEIS</span></h2>
+    <section class="personagens" id="personagens">
 
-            <p class="subtitle">
-                Quatro personagens com histórias diferentes,
-                mas todos marcados por escolhas, perdas e superação.
+        <div class="titulo">
+
+            <h2>👁️ Personagens</h2>
+
+            <p>
+                Quatro personagens marcantes do universo Naruto
             </p>
+
         </div>
 
 
-        <div class="characters-grid">
+        <div class="personagens-grid">
+
 
             <!-- NARUTO -->
-            <article class="character-card naruto-card-character">
 
-                <div class="character-number">01</div>
+            <div class="personagem naruto-card">
 
-                <div class="character-icon">🍥</div>
+                <div class="icone">🍥</div>
 
                 <h3>NARUTO</h3>
 
                 <h4>O NINJA QUE NUNCA DESISTIU</h4>
 
                 <p>
-                    Naruto começou sua jornada praticamente sozinho,
-                    mas transformou sua determinação em sua maior força.
-                    Sua trajetória é marcada por amizades, batalhas e
-                    pela vontade de ser reconhecido.
+                    Naruto representa determinação, coragem e amizade.
+                    Mesmo enfrentando dificuldades, ele continua
+                    perseguindo seus objetivos e tentando proteger
+                    aqueles que considera importantes.
                 </p>
 
-                <div class="character-tag">DETERMINAÇÃO</div>
-
-            </article>
+            </div>
 
 
             <!-- OBITO -->
-            <article class="character-card obito-card">
 
-                <div class="character-number">02</div>
+            <div class="personagem obito-card">
 
-                <div class="character-icon sharingan">👁️</div>
+                <div class="icone">👁️</div>
 
-                <h3>OBITO UCHIHA</h3>
+                <h3>OBITO</h3>
 
                 <h4>O HOMEM POR TRÁS DA MÁSCARA</h4>
 
                 <p>
-                    Obito é um dos personagens mais complexos da história.
-                    Seus sonhos e sua visão de mundo foram profundamente
-                    afetados pelas perdas que sofreu, levando-o por um
-                    caminho completamente diferente daquele que imaginava.
+                    Obito é um personagem marcado por perdas e conflitos.
+                    Sua história mostra como acontecimentos dolorosos
+                    podem transformar completamente a maneira como
+                    alguém enxerga o mundo.
                 </p>
 
-                <div class="character-tag">CONFLITO</div>
-
-            </article>
+            </div>
 
 
             <!-- KAKASHI -->
-            <article class="character-card kakashi-card">
 
-                <div class="character-number">03</div>
+            <div class="personagem kakashi-card">
 
-                <div class="character-icon">⚡</div>
+                <div class="icone">⚡</div>
 
                 <h3>KAKASHI</h3>
 
@@ -318,84 +678,68 @@
 
                 <p>
                     Kakashi Hatake é conhecido por sua inteligência,
-                    habilidade e experiência. Sua relação com Obito,
-                    Rin e Minato foi fundamental para definir sua história
-                    e sua maneira de enxergar a vida.
+                    experiência e habilidade. Sua história está
+                    profundamente ligada a Obito, Rin e Minato.
                 </p>
 
-                <div class="character-tag">EXPERIÊNCIA</div>
-
-            </article>
+            </div>
 
 
             <!-- ITACHI -->
-            <article class="character-card itachi-card">
 
-                <div class="character-number">04</div>
+            <div class="personagem itachi-card">
 
-                <div class="character-icon itachi-eye">🔴</div>
+                <div class="icone">🔴</div>
 
-                <h3>ITACHI UCHIHA</h3>
+                <h3>ITACHI</h3>
 
                 <h4>UM DESTINO TRÁGICO</h4>
 
                 <p>
-                    Itachi é lembrado por sua inteligência, seu poderoso
-                    Sharingan e principalmente pela complexidade de suas
-                    escolhas. Sua relação com Sasuke é uma das histórias
-                    mais marcantes de Naruto.
+                    Itachi Uchiha é um dos personagens mais complexos
+                    da história. Inteligente e habilidoso, sua relação
+                    com Sasuke e suas escolhas são partes importantes
+                    de sua trajetória.
                 </p>
 
-                <div class="character-tag">SACRIFÍCIO</div>
-
-            </article>
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- CONEXÃO -->
-    <section class="connection">
+    <!-- FINAL -->
 
-        <div class="connection-content">
+    <section class="final">
 
-            <p>⚽ + 🍥</p>
+        <h2>⚽ + 🍥</h2>
 
-            <h2>DUAS PAIXÕES.<br>UMA PERSONALIDADE.</h2>
+        <h2>
+            DUAS PAIXÕES.<br>
+            UMA PERSONALIDADE.
+        </h2>
 
-            <p>
-                No futebol, a paixão move a torcida.
-                Em Naruto, a determinação move o ninja.
-            </p>
-
-            <div class="line"></div>
-
-            <span>PAIXÃO • DETERMINAÇÃO • AMIZADE • SUPERAÇÃO</span>
-
-        </div>
+        <p>
+            No futebol, a paixão move a torcida.
+            Em Naruto, a determinação move o ninja.
+        </p>
 
     </section>
 
 
     <!-- RODAPÉ -->
+
     <footer>
 
-        <div class="footer-logo">
-            ⚽ <span>×</span> 🍥
-        </div>
-
-        <h3>MINHAS PAIXÕES</h3>
+        <h3>⚽ FUTEBOL • 🔵 GRÊMIO • 🍥 NARUTO</h3>
 
         <p>
-            Futebol • Grêmio • Naruto
-        </p>
-
-        <p class="copyright">
             Projeto desenvolvido em HTML e CSS.
         </p>
 
     </footer>
 
 </body>
+
 </html>
