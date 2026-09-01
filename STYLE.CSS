@@ -1,6 +1,6 @@
-/* =========================================
+/* =====================================
    RESET
-========================================= */
+===================================== */
 
 * {
     margin: 0;
@@ -14,32 +14,21 @@ html {
 
 body {
     background: #050505;
-    color: #ffffff;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-img {
-    width: 100%;
-    display: block;
-}
-
 a {
-    color: inherit;
     text-decoration: none;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+    color: inherit;
 }
 
 
-/* =========================================
-   NAVBAR
-========================================= */
+/* =====================================
+   MENU
+===================================== */
 
-header {
+.menu {
     position: fixed;
 
     top: 0;
@@ -47,68 +36,75 @@ header {
 
     width: 100%;
 
-    z-index: 1000;
-
-    background: rgba(5, 5, 5, 0.9);
-
-    backdrop-filter: blur(10px);
-
-    border-bottom: 1px solid #222;
-}
-
-.navbar {
     height: 75px;
-
-    width: 90%;
-    max-width: 1300px;
-
-    margin: auto;
 
     display: flex;
 
     align-items: center;
 
     justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: rgba(5, 5, 5, .88);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #222;
+
+    z-index: 999;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 18px;
 
     font-weight: 900;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 }
 
 .logo span {
     color: #ff5a00;
+
+    font-size: 28px;
 }
 
 nav {
     display: flex;
 
-    gap: 30px;
+    gap: 35px;
 }
 
 nav a {
-    color: #999;
+    color: #888;
 
-    font-size: 11px;
+    font-size: 10px;
+
+    font-weight: bold;
 
     letter-spacing: 2px;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
 nav a:hover {
     color: #ff5a00;
 }
 
+.menu-right {
+    color: #555;
 
-/* =========================================
-   HERO
-========================================= */
+    font-size: 9px;
 
-.hero {
+    letter-spacing: 2px;
+}
+
+
+/* =====================================
+   HOME
+===================================== */
+
+.home {
     min-height: 100vh;
 
     position: relative;
@@ -122,7 +118,7 @@ nav a:hover {
     background: #050505;
 }
 
-.hero-background {
+.home-bg {
     position: absolute;
 
     inset: 0;
@@ -130,193 +126,266 @@ nav a:hover {
     background:
         linear-gradient(
             90deg,
-            #050505 20%,
-            rgba(5,5,5,0.8) 45%,
-            rgba(5,5,5,0.3) 100%
+            #050505 5%,
+            rgba(5,5,5,.85) 35%,
+            rgba(5,5,5,.25) 100%
         ),
         linear-gradient(
             0deg,
             #050505,
             transparent 50%
         ),
-        url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=2000&q=85");
+        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=2000&q=85");
 
     background-size: cover;
 
     background-position: center;
 
-    opacity: 0.9;
+    opacity: .8;
 }
 
-.hero::after {
+.home::before {
     content: "";
 
     position: absolute;
 
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
 
-    right: -250px;
-    top: 15%;
+    right: -300px;
+    top: 100px;
 
     border-radius: 50%;
 
     background: #ff4d00;
 
-    opacity: 0.12;
+    opacity: .12;
 
-    filter: blur(30px);
+    filter: blur(50px);
 }
 
-.hero-content {
+.home-content {
     position: relative;
 
     z-index: 2;
 
     width: 90%;
-    max-width: 1200px;
+
+    max-width: 1250px;
 
     margin: auto;
-
-    padding-top: 70px;
 }
 
-.hero-small {
-    color: #ff6500;
+.vertical-text {
+    position: absolute;
 
-    font-size: 11px;
+    left: -30px;
+    top: 30px;
 
-    letter-spacing: 6px;
+    writing-mode: vertical-rl;
 
-    margin-bottom: 25px;
+    color: #444;
+
+    letter-spacing: 5px;
+
+    font-size: 9px;
 }
 
-.hero h1 {
-    font-size: clamp(80px, 15vw, 190px);
+.hero-text {
+    max-width: 700px;
+}
 
-    line-height: 0.8;
+.orange {
+    color: #ff5a00;
 
-    letter-spacing: -10px;
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+.hero-text h1 {
+    font-size: clamp(90px, 16vw, 210px);
+
+    line-height: .75;
+
+    letter-spacing: -12px;
 
     font-weight: 900;
 }
 
-.hero h2 {
-    margin-top: 30px;
+.hero-text h2 {
+    margin-top: 35px;
 
-    font-size: 18px;
+    font-size: 15px;
 
-    color: #ffffff;
-
-    letter-spacing: 8px;
+    letter-spacing: 7px;
 
     font-weight: normal;
 }
 
-.hero-description {
-    max-width: 550px;
+.hero-text > p:last-of-type {
+    color: #999;
 
-    color: #aaa;
+    max-width: 480px;
+
+    margin-top: 25px;
 
     line-height: 1.8;
 
-    margin-top: 25px;
+    font-size: 14px;
 }
 
-.hero-button {
-    display: inline-block;
+.explore {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
 
     margin-top: 35px;
 
-    padding: 16px 28px;
+    padding: 17px 25px;
 
-    background: #ff5a00;
+    border: 1px solid #ff5a00;
 
-    color: #fff;
+    color: #ff5a00;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: bold;
 
     letter-spacing: 2px;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
-.hero-button:hover {
-    background: #ff7a35;
-
-    transform: translateY(-4px);
+.explore span {
+    font-size: 20px;
 }
 
-.hero-scroll {
+.explore:hover {
+    background: #ff5a00;
+
+    color: #000;
+}
+
+.home-bottom {
     position: absolute;
 
-    bottom: 35px;
+    bottom: 30px;
+
     left: 5%;
+
+    right: 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
 
     color: #555;
 
-    font-size: 10px;
+    font-size: 9px;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
+}
+
+.home-bottom div {
+    width: 100px;
+
+    height: 1px;
+
+    background: #333;
 }
 
 
-/* =========================================
+/* =====================================
    INTRO
-========================================= */
+===================================== */
 
 .intro {
-    padding: 120px 0;
+    padding: 130px 8%;
 
-    background: #0a0a0a;
-
-    border-bottom: 1px solid #1b1b1b;
-}
-
-.intro-grid {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 80px;
+    gap: 100px;
 
-    align-items: center;
+    background: #080808;
 }
 
-.tag {
-    color: #ff6500;
+.small-title {
+    color: #ff5a00;
 
-    font-size: 10px;
+    font-size: 9px;
 
     font-weight: bold;
 
     letter-spacing: 4px;
 
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .intro h2 {
-    font-size: clamp(35px, 5vw, 60px);
+    font-size: clamp(45px, 6vw, 75px);
 
-    line-height: 1.05;
+    line-height: .95;
 }
 
-.intro-text {
+.intro h2 strong {
+    display: block;
+
+    color: #ff5a00;
+}
+
+.intro-right {
+    padding-top: 20px;
+}
+
+.intro-right p {
     color: #888;
+
+    max-width: 550px;
 
     line-height: 1.9;
 
     margin-bottom: 20px;
 }
 
+.line {
+    width: 80px;
 
-/* =========================================
-   SECTION HEADER
-========================================= */
+    height: 2px;
 
-.section-header {
+    background: #ff5a00;
+
+    margin: 30px 0;
+}
+
+.intro-right span {
+    color: #444;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =====================================
+   PERSONAGENS
+===================================== */
+
+.main-characters {
+    padding: 120px 5%;
+
+    background: #050505;
+}
+
+.title-area {
     display: flex;
 
     align-items: flex-end;
@@ -326,64 +395,61 @@ nav a:hover {
     margin-bottom: 50px;
 }
 
-.section-header h2 {
-    font-size: clamp(40px, 6vw, 70px);
+.title-area h2 {
+    font-size: clamp(45px, 7vw, 85px);
 
-    line-height: 0.9;
+    line-height: .85;
 }
 
-.section-header > p {
-    max-width: 250px;
-
+.title-area > p {
     color: #666;
 
-    font-size: 13px;
+    max-width: 220px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
 }
-
-
-/* =========================================
-   PERSONAGENS
-========================================= */
 
 .characters {
-    padding: 120px 0;
-
-    background: #050505;
-}
-
-.characters-grid {
     display: grid;
 
     grid-template-columns: repeat(5, 1fr);
 
-    gap: 15px;
+    gap: 4px;
 }
 
-.character-card {
-    height: 550px;
+.person {
+    height: 570px;
 
     position: relative;
 
     overflow: hidden;
 
+    cursor: pointer;
+
     background: #111;
-
-    border-bottom: 3px solid;
 }
 
-.character-card img {
-    height: 100%;
+.person-bg {
+    position: absolute;
 
-    object-fit: cover;
+    inset: 0;
 
-    transition: 0.6s;
+    background-size: cover;
+
+    background-position: center;
+
+    transition: .6s;
 }
 
-.character-card:hover img {
-    transform: scale(1.08);
+.person:hover .person-bg {
+    transform: scale(1.1);
 }
 
-.card-overlay {
+.person::after {
+    content: "";
+
     position: absolute;
 
     inset: 0;
@@ -391,107 +457,151 @@ nav a:hover {
     background:
         linear-gradient(
             0deg,
-            rgba(0,0,0,0.95),
-            rgba(0,0,0,0.25) 65%,
+            rgba(0,0,0,.98),
+            rgba(0,0,0,.2) 65%,
             transparent
         );
 }
 
-.card-content {
+.person-number {
     position: absolute;
 
-    bottom: 0;
-    left: 0;
+    top: 20px;
 
-    width: 100%;
+    left: 20px;
 
-    padding: 25px;
-}
-
-.number {
-    position: absolute;
-
-    bottom: 210px;
-    right: 20px;
-
-    font-size: 35px;
-
-    color: rgba(255,255,255,0.15);
-
-    font-weight: bold;
-}
-
-.card-tag {
-    font-size: 8px;
-
-    letter-spacing: 2px;
-
-    color: #aaa;
-
-    margin-bottom: 8px;
-}
-
-.card-content h3 {
-    font-size: 30px;
-
-    margin-bottom: 10px;
-}
-
-.card-content > p:last-child {
-    color: #aaa;
+    z-index: 3;
 
     font-size: 12px;
+
+    color: rgba(255,255,255,.5);
+
+    letter-spacing: 2px;
+}
+
+.person-info {
+    position: absolute;
+
+    z-index: 4;
+
+    bottom: 30px;
+
+    left: 25px;
+
+    right: 25px;
+}
+
+.person-info span {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #aaa;
+}
+
+.person-info h3 {
+    font-size: 35px;
+
+    margin: 7px 0 10px;
+}
+
+.person-info p {
+    color: #aaa;
+
+    font-size: 11px;
 
     line-height: 1.6;
 }
 
+.person-color {
+    position: absolute;
 
-/* CORES DOS PERSONAGENS */
+    z-index: 5;
 
-.naruto-card {
-    border-color: #ff6500;
+    bottom: 0;
+
+    left: 0;
+
+    height: 3px;
+
+    width: 100%;
 }
 
-.naruto-card h3 {
+
+/* IMAGENS */
+
+.naruto .person-bg {
+    background-image:
+        url("https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=900&q=85");
+}
+
+.sasuke .person-bg {
+    background-image:
+        url("https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=900&q=85");
+}
+
+.itachi .person-bg {
+    background-image:
+        url("https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=900&q=85");
+}
+
+.obito .person-bg {
+    background-image:
+        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85");
+}
+
+.kakashi .person-bg {
+    background-image:
+        url("https://images.unsplash.com/photo-1541560052-77ec1bbc09f7?auto=format&fit=crop&w=900&q=85");
+}
+
+
+/* CORES */
+
+.naruto .person-info h3 {
     color: #ff6500;
 }
 
-.sasuke-card {
-    border-color: #4169d8;
+.naruto .person-color {
+    background: #ff6500;
 }
 
-.sasuke-card h3 {
-    color: #5e89ff;
+.sasuke .person-info h3 {
+    color: #5c83ff;
 }
 
-.itachi-card {
-    border-color: #d00000;
+.sasuke .person-color {
+    background: #4264c7;
 }
 
-.itachi-card h3 {
+.itachi .person-info h3 {
     color: #ff3030;
 }
 
-.obito-card {
-    border-color: #8a35b8;
+.itachi .person-color {
+    background: #d00000;
 }
 
-.obito-card h3 {
-    color: #bd68ed;
+.obito .person-info h3 {
+    color: #bd5be9;
 }
 
-.kakashi-card {
-    border-color: #49a8df;
+.obito .person-color {
+    background: #8736ae;
 }
 
-.kakashi-card h3 {
-    color: #63c2ff;
+.kakashi .person-info h3 {
+    color: #60bfff;
+}
+
+.kakashi .person-color {
+    background: #398fc5;
 }
 
 
-/* =========================================
+/* =====================================
    UCHIHA
-========================================= */
+===================================== */
 
 .uchiha {
     min-height: 750px;
@@ -504,10 +614,10 @@ nav a:hover {
 
     overflow: hidden;
 
-    background: #080000;
+    background: #090000;
 }
 
-.uchiha-image {
+.uchiha-bg {
     position: absolute;
 
     inset: 0;
@@ -515,286 +625,244 @@ nav a:hover {
     background:
         linear-gradient(
             90deg,
-            #080000,
-            rgba(30,0,0,0.75),
-            rgba(0,0,0,0.25)
+            #090000,
+            rgba(30,0,0,.7),
+            rgba(0,0,0,.15)
         ),
-        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85");
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=85");
 
     background-size: cover;
 
     background-position: center;
 
-    opacity: 0.7;
+    opacity: .55;
 }
 
 .uchiha-content {
     position: relative;
 
     z-index: 2;
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
 }
 
-.tag.red {
+.red {
     color: #e00000;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
 }
 
 .uchiha h2 {
-    max-width: 700px;
+    font-size: clamp(60px, 9vw, 120px);
 
-    font-size: clamp(50px, 8vw, 100px);
+    line-height: .8;
 
-    line-height: 0.9;
-
-    margin-bottom: 30px;
+    margin: 25px 0;
 }
 
 .uchiha h2 span {
-    display: block;
-
-    color: #e00000;
+    color: #d00000;
 }
 
-.uchiha-content > p:not(.tag) {
-    max-width: 600px;
+.uchiha-description {
+    max-width: 550px;
 
-    color: #aaa;
+    color: #999;
 
     line-height: 1.8;
 
-    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.uchiha-stats {
+    display: flex;
+
+    gap: 60px;
+
+    margin-top: 50px;
+}
+
+.uchiha-stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.uchiha-stats strong {
+    color: #700000;
+
+    font-size: 30px;
+}
+
+.uchiha-stats span {
+    font-size: 9px;
+
+    letter-spacing: 3px;
 }
 
 
-/* SHARINGAN */
+/* =====================================
+   STORY
+===================================== */
 
-.sharingan {
-    width: 100px;
-    height: 100px;
+.story {
+    padding: 130px 7%;
 
-    margin-top: 40px;
-
-    border-radius: 50%;
-
-    position: relative;
-
-    background: #bd0000;
-
-    border: 8px solid #111;
-
-    box-shadow:
-        0 0 0 4px #bd0000,
-        0 0 35px rgba(220,0,0,0.6);
+    background: #080808;
 }
 
-.sharingan::before {
-    content: "";
-
-    position: absolute;
-
-    width: 35px;
-    height: 35px;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background: #050505;
+.story-title {
+    margin-bottom: 70px;
 }
 
-.sharingan span {
-    position: absolute;
+.story-title h2 {
+    font-size: clamp(45px, 7vw, 90px);
 
-    width: 13px;
-    height: 13px;
-
-    background: #050505;
-
-    border-radius: 50%;
+    line-height: .9;
 }
 
-.sharingan span:nth-child(1) {
-    top: 10px;
-    left: 42px;
+.story-title h2 span {
+    color: #ff5a00;
 }
 
-.sharingan span:nth-child(2) {
-    bottom: 15px;
-    left: 10px;
-}
-
-.sharingan span:nth-child(3) {
-    bottom: 15px;
-    right: 10px;
-}
-
-
-/* =========================================
-   DUO
-========================================= */
-
-.duo {
-    padding: 120px 0;
-
-    background: #060606;
-}
-
-.duo-grid {
+.story-cards {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
 }
 
-.duo-card {
-    min-height: 500px;
+.story-cards article {
+    min-height: 320px;
 
-    position: relative;
+    padding: 35px;
 
-    display: flex;
+    border: 1px solid #222;
 
-    align-items: flex-end;
+    background: #0c0c0c;
 
-    overflow: hidden;
-
-    background-size: cover;
-
-    background-position: center;
-
-    transition: 0.4s;
+    transition: .3s;
 }
 
-.duo-card:hover {
+.story-cards article:hover {
     transform: translateY(-8px);
+
+    border-color: #ff5a00;
 }
 
-.itachi-duo {
-    background:
-        linear-gradient(
-            0deg,
-            #090000,
-            transparent 70%
-        ),
-        url("https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80");
+.story-top {
+    color: #555;
 
-    border-bottom: 3px solid #c00000;
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 80px;
 }
 
-.obito-duo {
-    background:
-        linear-gradient(
-            0deg,
-            #100615,
-            transparent 70%
-        ),
-        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=80");
+.story-cards h3 {
+    font-size: 26px;
 
-    border-bottom: 3px solid #8736ae;
-}
-
-.duo-text {
-    padding: 40px;
-}
-
-.duo-text h3 {
-    font-size: 55px;
+    color: #ff5a00;
 
     margin-bottom: 15px;
 }
 
-.duo-text p:last-child {
-    color: #aaa;
+.story-cards p {
+    color: #777;
 
-    max-width: 450px;
+    font-size: 12px;
 
-    line-height: 1.7;
-}
-
-.itachi-duo h3 {
-    color: #ff3030;
-}
-
-.tag.purple {
-    color: #b353e5;
-}
-
-.obito-duo h3 {
-    color: #b353e5;
+    line-height: 1.8;
 }
 
 
-/* =========================================
-   COADJUVANTES
-========================================= */
+/* =====================================
+   OUTROS
+===================================== */
 
-.support {
-    padding: 120px 0;
+.others {
+    padding: 120px 7%;
 
     background: #090d12;
 }
 
-.support h2 {
-    font-size: clamp(45px, 7vw, 80px);
+.others-title h2 {
+    max-width: 800px;
 
-    margin-bottom: 50px;
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: .9;
+
+    margin-bottom: 60px;
 }
 
-.support-grid {
+.others-title h2 span {
+    color: #4e8fd2;
+}
+
+.others-grid {
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 12px;
+    border-top: 1px solid #222;
+
+    border-left: 1px solid #222;
 }
 
-.support-card {
+.others-grid div {
+    min-height: 140px;
+
     padding: 30px;
 
-    min-height: 150px;
+    border-right: 1px solid #222;
 
-    background: #0e141b;
+    border-bottom: 1px solid #222;
 
-    border: 1px solid #1d2732;
-
-    transition: 0.3s;
+    transition: .3s;
 }
 
-.support-card:hover {
-    border-color: #ff6500;
-
-    transform: translateY(-5px);
+.others-grid div:hover {
+    background: #101821;
 }
 
-.support-card span {
-    color: #444;
+.others-grid b {
+    display: block;
 
-    font-size: 12px;
+    color: #fff;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
 }
 
-.support-card h3 {
-    color: #ff6500;
+.others-grid span {
+    color: #555;
 
-    margin: 12px 0 5px;
-
-    font-size: 18px;
-}
-
-.support-card p {
-    color: #777;
-
-    font-size: 12px;
+    font-size: 11px;
 }
 
 
-/* =========================================
+/* =====================================
    FINAL
-========================================= */
+===================================== */
 
 .final {
-    min-height: 600px;
+    min-height: 650px;
 
     display: flex;
 
@@ -804,105 +872,118 @@ nav a:hover {
 
     text-align: center;
 
-    padding: 100px 20px;
-
     background:
         radial-gradient(
-            circle at center,
-            rgba(255,70,0,0.2),
+            circle,
+            rgba(255,80,0,.18),
             transparent 35%
         ),
         #050505;
 }
 
-.final-content {
-    max-width: 900px;
-}
-
 .final h2 {
-    font-size: clamp(50px, 9vw, 110px);
+    font-size: clamp(70px, 12vw, 150px);
 
-    line-height: 0.9;
+    line-height: .75;
 
-    margin-bottom: 30px;
+    letter-spacing: -7px;
+
+    margin: 20px 0 30px;
 }
 
 .final h2 span {
-    color: #ff6500;
+    color: #ff5a00;
 }
 
-.final-content > p:last-child {
-    max-width: 550px;
+.final div > p:last-child {
+    color: #666;
+
+    max-width: 450px;
 
     margin: auto;
 
-    color: #777;
-
     line-height: 1.8;
+
+    font-size: 12px;
 }
 
 
-/* =========================================
+/* =====================================
    FOOTER
-========================================= */
+===================================== */
 
 footer {
-    padding: 40px 20px;
+    padding: 45px 7%;
 
-    text-align: center;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
 
     background: #020202;
 
-    border-top: 1px solid #1d1d1d;
+    border-top: 1px solid #1c1c1c;
 }
 
-footer .logo {
-    margin-bottom: 12px;
+.footer-logo {
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.footer-logo span {
+    color: #ff5a00;
 }
 
 footer p {
-    color: #555;
+    color: #444;
 
-    font-size: 11px;
+    font-size: 10px;
+
+    letter-spacing: 1px;
 }
 
 
-/* =========================================
-   RESPONSIVIDADE
-========================================= */
+/* =====================================
+   RESPONSIVO
+===================================== */
 
-@media (max-width: 1000px) {
+@media(max-width: 1000px) {
 
-    .characters-grid {
+    .menu-right {
+        display: none;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    .characters {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .support-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .intro-grid {
+    .story-cards {
         grid-template-columns: 1fr;
-        gap: 30px;
+    }
+
+    .others-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
 
 
-@media (max-width: 650px) {
+@media(max-width: 600px) {
 
-    header {
-        position: absolute;
-    }
-
-    .navbar {
+    .menu {
         height: auto;
 
-        padding: 20px 0;
+        padding: 18px;
 
         flex-direction: column;
 
-        gap: 20px;
+        gap: 15px;
     }
 
     nav {
@@ -913,52 +994,66 @@ footer p {
         justify-content: center;
     }
 
-    nav a {
-        font-size: 9px;
-    }
-
-    .hero {
+    .home {
         min-height: 850px;
     }
 
-    .hero h1 {
+    .hero-text h1 {
         font-size: 80px;
 
         letter-spacing: -5px;
     }
 
-    .hero h2 {
-        font-size: 12px;
+    .hero-text h2 {
+        font-size: 10px;
 
-        letter-spacing: 4px;
+        letter-spacing: 3px;
     }
 
-    .characters-grid {
+    .intro {
         grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 90px 8%;
     }
 
-    .character-card {
-        height: 500px;
-    }
-
-    .section-header {
+    .title-area {
         display: block;
     }
 
-    .section-header > p {
+    .title-area > p {
         margin-top: 20px;
     }
 
-    .duo-grid {
+    .characters {
         grid-template-columns: 1fr;
     }
 
-    .duo-card {
-        min-height: 400px;
+    .person {
+        height: 500px;
     }
 
-    .support-grid {
+    .uchiha {
+        min-height: 700px;
+    }
+
+    .uchiha-stats {
+        gap: 25px;
+    }
+
+    .story {
+        padding: 90px 7%;
+    }
+
+    .others-grid {
         grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
     }
 
 }
