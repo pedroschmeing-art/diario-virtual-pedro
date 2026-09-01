@@ -1,131 +1,107 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --black: #050609;
+    --dark: #0a0d14;
+
+    --blue: #00aaff;
+    --blue-dark: #0047a3;
+    --blue-light: #38c7ff;
+
+    --white: #ffffff;
+    --gray: #aeb6c4;
+
+    --orange: #ff6500;
+    --orange-light: #ff9d00;
+
+    --red: #d60000;
+    --red-dark: #650000;
+
+    --purple: #5d20a8;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #050816;
-    color: white;
-    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.7;
 }
 
-/* =========================
-   FUNDO GERAL
-========================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: #0066ff;
-    border-radius: 50%;
-    filter: blur(180px);
-    opacity: 0.18;
-    top: 10%;
-    left: -200px;
-    z-index: -1;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-body::after {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: #c400ff;
-    border-radius: 50%;
-    filter: blur(180px);
-    opacity: 0.16;
-    bottom: 0;
-    right: -200px;
-    z-index: -1;
+section {
+    scroll-margin-top: 80px;
 }
 
 
 /* =========================
-   HEADER
+   MENU
 ========================= */
 
-header {
+.header {
     position: fixed;
     top: 0;
-    left: 0;
-
     width: 100%;
+    z-index: 1000;
 
-    padding: 20px 7%;
+    background: rgba(3, 5, 10, 0.92);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(0, 170, 255, 0.2);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+
+    height: 75px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    background: rgba(5, 8, 22, 0.65);
-
-    backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-    z-index: 1000;
+    padding: 0 25px;
 }
 
-header h1 {
-    font-size: 24px;
+.logo {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
     letter-spacing: 2px;
-
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 10px #00d9ff,
-        0 0 25px #0066ff;
 }
 
-nav {
+.logo span {
+    color: var(--blue);
+}
+
+.menu {
     display: flex;
-    gap: 35px;
+    list-style: none;
+    gap: 25px;
 }
 
-nav a {
-    position: relative;
-
-    color: #cbd3e5;
-
-    text-decoration: none;
-
+.menu a {
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
+    color: #ddd;
 
     transition: 0.3s;
 }
 
-nav a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: -8px;
-
-    width: 0;
-    height: 2px;
-
-    background: #00d9ff;
-
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #00d9ff;
-}
-
-nav a:hover::after {
-    width: 100%;
-    left: 0;
+.menu a:hover {
+    color: var(--blue);
 }
 
 
@@ -136,162 +112,127 @@ nav a:hover::after {
 .hero {
     min-height: 100vh;
 
-    padding: 160px 8% 100px;
-
     display: flex;
     align-items: center;
+    justify-content: center;
 
     position: relative;
-
     overflow: hidden;
 
-    background:
-        linear-gradient(
-            90deg,
-            #050816 5%,
-            rgba(5, 8, 22, 0.88) 38%,
-            rgba(5, 8, 22, 0.25)
-        ),
-        url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1800&q=90");
+    padding: 120px 8% 80px;
 
-    background-size: cover;
-    background-position: center;
+    background:
+        radial-gradient(circle at 15% 50%, rgba(0, 93, 255, 0.35), transparent 30%),
+        radial-gradient(circle at 85% 50%, rgba(255, 80, 0, 0.3), transparent 30%),
+        linear-gradient(120deg, #02050b, #080b13 50%, #080303);
 }
 
 .hero::before {
     content: "";
 
     position: absolute;
+    inset: 0;
 
-    width: 600px;
-    height: 600px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent 49%,
+            rgba(255,255,255,0.08) 50%,
+            transparent 51%
+        );
 
-    right: -150px;
-    top: 10%;
-
-    background: #0066ff;
-
-    border-radius: 50%;
-
-    filter: blur(160px);
-
-    opacity: 0.25;
+    opacity: 0.2;
 }
 
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    width: 400px;
-    height: 400px;
-
-    right: 25%;
-    bottom: -200px;
-
-    background: #ff00cc;
-
-    border-radius: 50%;
-
-    filter: blur(160px);
-
-    opacity: 0.18;
-}
-
-.hero-conteudo {
+.hero-content {
+    max-width: 800px;
+    text-align: center;
     position: relative;
     z-index: 2;
-
-    max-width: 700px;
-
-    animation: aparecer 1.2s ease;
 }
 
-.hero-conteudo > p:first-child {
-    color: #00eaff;
-
+.small-title {
+    color: var(--blue-light);
+    font-weight: 700;
+    letter-spacing: 4px;
     font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.hero h2 {
-    font-size: clamp(60px, 8vw, 105px);
+.hero h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(45px, 8vw, 100px);
+    line-height: 1;
 
-    line-height: 0.88;
-
-    letter-spacing: -5px;
-
-    margin-bottom: 35px;
+    text-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
 }
 
-.hero h2 span {
-    color: #00c8ff;
-
-    text-shadow:
-        0 0 15px #00c8ff,
-        0 0 40px #0066ff;
+.hero h1 span {
+    color: var(--orange);
+    font-size: 0.55em;
 }
 
-.descricao {
-    max-width: 520px;
-
-    color: #b9c3d7;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    margin-bottom: 35px;
+.hero-text {
+    color: #cbd2dd;
+    max-width: 650px;
+    margin: 30px auto;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-/* BOTÃO */
+.btn {
+    padding: 13px 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: 0.3s;
+}
 
-.botao {
-    display: inline-block;
+.btn:hover {
+    transform: translateY(-4px);
+}
 
-    padding: 17px 35px;
+.btn.blue {
+    background: var(--blue);
+    color: #00111d;
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.35);
+}
 
-    border-radius: 40px;
-
-    background: linear-gradient(
-        90deg,
-        #0066ff,
-        #00c8ff
-    );
-
+.btn.orange {
+    background: var(--orange);
     color: white;
-
-    text-decoration: none;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    box-shadow:
-        0 0 20px rgba(0, 174, 255, 0.35);
-
-    transition: 0.4s;
+    box-shadow: 0 0 20px rgba(255, 101, 0, 0.35);
 }
 
-.botao:hover {
-    transform: translateY(-5px) scale(1.04);
+.hero-symbol {
+    position: absolute;
+    right: 7%;
+    opacity: 0.15;
+}
+
+.circle-sharingan {
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 10px solid #550000;
+
+    font-size: 80px;
+
+    color: #ff0000;
 
     box-shadow:
-        0 0 30px rgba(0, 217, 255, 0.7);
-
-    background: linear-gradient(
-        90deg,
-        #ff00cc,
-        #7b2cff
-    );
+        0 0 50px #8b0000,
+        inset 0 0 50px #8b0000;
 }
 
 
@@ -299,180 +240,38 @@ nav a:hover::after {
    SEÇÕES
 ========================= */
 
-.secao {
-    padding: 120px 7%;
-
-    position: relative;
-
-    background:
-        linear-gradient(
-            180deg,
-            #050816,
-            #090d24
-        );
-}
-
-.titulo {
-    text-align: center;
-
-    margin-bottom: 65px;
-}
-
-.titulo p {
-    color: #00d9ff;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 15px;
-}
-
-.titulo h2 {
-    font-size: clamp(35px, 5vw, 60px);
-
-    letter-spacing: -2px;
-}
-
-
-/* =========================
-   CARDS DOS JOGOS
-========================= */
-
-.jogos {
-    max-width: 1250px;
-
+.section {
+    padding: 110px 8%;
+    max-width: 1400px;
     margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
 }
 
-.jogo {
-    height: 450px;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    overflow: hidden;
-
-    border-radius: 25px;
-
-    border: 1px solid rgba(255, 255, 255, 0.1);
-
-    background-size: cover;
-
-    background-position: center;
-
-    transition: 0.5s;
-
-    box-shadow:
-        0 15px 50px rgba(0, 0, 0, 0.35);
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.jogo::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent 25%,
-            rgba(0, 0, 0, 0.9)
-        );
-
-    z-index: 1;
+.section-title > p:first-child {
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
 }
 
-.jogo::after {
-    content: "";
-
-    position: absolute;
-
-    width: 200px;
-    height: 200px;
-
-    background: #00c8ff;
-
-    border-radius: 50%;
-
-    filter: blur(100px);
-
-    opacity: 0;
-
-    transition: 0.5s;
+.section-title h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(30px, 5vw, 55px);
+    margin-top: 10px;
 }
 
-.jogo:hover {
-    transform: translateY(-15px);
-
-    border-color: #00c8ff;
-
-    box-shadow:
-        0 25px 70px rgba(0, 140, 255, 0.25);
+.section-title h2 span {
+    color: var(--blue);
 }
 
-.jogo:hover::after {
-    opacity: 0.3;
-}
-
-.minecraft {
-    background-image:
-        url("https://images.unsplash.com/photo-1627856013091-fed6e4f30025?auto=format&fit=crop&w=1000&q=90");
-}
-
-.freefire {
-    background-image:
-        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=90");
-}
-
-.gta {
-    background-image:
-        url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=90");
-}
-
-.jogo-info {
-    position: relative;
-
-    z-index: 2;
-
-    padding: 30px;
-
-    width: 100%;
-}
-
-.jogo-info small {
-    color: #00eaff;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-}
-
-.jogo-info h3 {
-    font-size: 35px;
-
-    margin: 10px 0;
-}
-
-.jogo-info p {
-    color: #d0d7e5;
-
-    font-size: 15px;
+.subtitle {
+    color: var(--gray);
+    max-width: 650px;
+    margin: 15px auto;
 }
 
 
@@ -480,21 +279,630 @@ nav a:hover::after {
    FUTEBOL
 ========================= */
 
-.futebol {
-    min-height: 700px;
+.football-section {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.15), transparent 30%);
+}
 
+.football-content {
     display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
 
-    grid-template-columns: 1fr 1fr;
+.football-text h3 {
+    color: var(--blue-light);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.football-text p {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.stats div {
+    min-width: 120px;
+    padding: 20px;
+
+    text-align: center;
+
+    background: #080d16;
+
+    border: 1px solid rgba(0, 170, 255, 0.3);
+    border-radius: 8px;
+}
+
+.stats strong {
+    display: block;
+    font-size: 28px;
+}
+
+.stats span {
+    font-size: 12px;
+    color: var(--gray);
+}
+
+.football-card {
+    padding: 60px 30px;
+    text-align: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(145deg, #07182d, #020306);
+
+    border: 1px solid var(--blue);
+
+    box-shadow:
+        0 0 35px rgba(0, 119, 255, 0.15);
+}
+
+.ball {
+    font-size: 80px;
+    margin-bottom: 15px;
+}
+
+.football-card h3 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 30px;
+    color: var(--blue);
+}
+
+.football-card p {
+    color: var(--gray);
+}
+
+
+/* =========================
+   GRÊMIO
+========================= */
+
+.gremio-section {
+    max-width: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #02060b 0%,
+            #001a36 50%,
+            #030507 100%
+        );
 
     position: relative;
+}
 
-    overflow: hidden;
+.gremio-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.gremio-intro {
+    text-align: center;
+}
+
+.gremio-symbol {
+    width: 130px;
+    height: 130px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 70px;
+    font-weight: 800;
+
+    color: white;
+
+    border: 8px solid white;
 
     background: linear-gradient(
-        135deg,
-        #00132d,
-        #002e64,
-        #00111f
+        #00aaff 0 33%,
+        #050505 33% 66%,
+        #eeeeee 66%
     );
+
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.4);
+}
+
+.gremio-intro h3 {
+    font-family: "Orbitron", sans-serif;
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+.gremio-intro p {
+    color: #c2cad5;
+    margin-bottom: 15px;
+}
+
+.gremio-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.info-card {
+    padding: 25px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    border: 1px solid rgba(0, 170, 255, 0.3);
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--blue);
+
+    box-shadow: 0 10px 30px rgba(0, 140, 255, 0.2);
+}
+
+.info-card span {
+    font-size: 30px;
+}
+
+.info-card h3 {
+    font-family: "Orbitron", sans-serif;
+    margin: 8px 0;
+}
+
+.info-card p {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+
+/* =========================
+   NARUTO
+========================= */
+
+.naruto-section {
+    max-width: none;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 40%, rgba(255, 100, 0, 0.18), transparent 30%),
+        radial-gradient(circle at 80% 60%, rgba(190, 0, 0, 0.2), transparent 30%),
+        #080303;
+}
+
+.naruto-title h2 span {
+    color: var(--orange);
+}
+
+.naruto-title > p:first-child {
+    color: var(--orange);
+}
+
+.naruto-content {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.naruto-text h3 {
+    color: var(--orange);
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.naruto-text p {
+    color: #c8c1bd;
+    margin-bottom: 18px;
+}
+
+.naruto-card {
+    text-align: center;
+
+    padding: 55px 30px;
+
+    border: 1px solid var(--orange);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #271005,
+            #080303
+        );
+
+    box-shadow: 0 0 40px rgba(255, 80, 0, 0.12);
+}
+
+.naruto-logo {
+    font-size: 90px;
+    margin-bottom: 15px;
+}
+
+.naruto-card h3 {
+    font-family: "Orbitron", sans-serif;
+    color: var(--orange);
+}
+
+.naruto-card p {
+    color: var(--gray);
+}
+
+
+/* =========================
+   PERSONAGENS
+========================= */
+
+.characters-section {
+    max-width: none;
+    background: #030406;
+}
+
+.characters-grid {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.character-card {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 500px;
+
+    padding: 35px 25px;
+
+    border-radius: 12px;
+
+    background: #0b0d12;
+
+    transition: 0.4s;
+}
+
+.character-card:hover {
+    transform: translateY(-12px);
+}
+
+.character-number {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 35px;
+
+    opacity: 0.15;
+}
+
+.character-icon {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.character-card h3 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.character-card h4 {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.character-card p {
+    color: #aeb5c0;
+    font-size: 14px;
+}
+
+.character-tag {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 5px 12px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    border-radius: 20px;
+}
+
+
+/* Naruto */
+
+.naruto-card-character {
+    border: 1px solid var(--orange);
+}
+
+.naruto-card-character h3,
+.naruto-card-character h4 {
+    color: var(--orange);
+}
+
+.naruto-card-character .character-tag {
+    color: var(--orange);
+    border: 1px solid var(--orange);
+}
+
+
+/* Obito */
+
+.obito-card {
+    border: 1px solid #6920a8;
+
+    background:
+        radial-gradient(circle at 50% 0%, rgba(100, 20, 170, 0.25), transparent 50%),
+        #09050e;
+}
+
+.obito-card h3,
+.obito-card h4 {
+    color: #a548ff;
+}
+
+.obito-card .character-tag {
+    color: #b05cff;
+    border: 1px solid #8b2ed1;
+}
+
+.sharingan {
+    color: #e00000;
+}
+
+
+/* Kakashi */
+
+.kakashi-card {
+    border: 1px solid #4389c9;
+
+    background:
+        radial-gradient(circle at 50% 0%, rgba(50, 130, 210, 0.2), transparent 50%),
+        #060b11;
+}
+
+.kakashi-card h3,
+.kakashi-card h4 {
+    color: #5eb5ff;
+}
+
+.kakashi-card .character-tag {
+    color: #5eb5ff;
+    border: 1px solid #4389c9;
+}
+
+
+/* Itachi */
+
+.itachi-card {
+    border: 1px solid #9d0000;
+
+    background:
+        radial-gradient(circle at 50% 0%, rgba(170, 0, 0, 0.2), transparent 50%),
+        #0c0303;
+}
+
+.itachi-card h3,
+.itachi-card h4 {
+    color: #ff3030;
+}
+
+.itachi-card .character-tag {
+    color: #ff3d3d;
+    border: 1px solid #a00000;
+}
+
+.itachi-eye {
+    color: #ff0000;
+}
+
+
+/* =========================
+   CONEXÃO
+========================= */
+
+.connection {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #001329,
+            #050609 45%,
+            #180700
+        );
+}
+
+.connection-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.connection-content > p:first-child {
+    font-size: 40px;
+}
+
+.connection h2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(30px, 5vw, 55px);
+
+    margin: 20px 0;
+
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        white,
+        var(--orange)
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.connection-content > p {
+    color: #bdc5d1;
+}
+
+.line {
+    width: 100px;
+    height: 3px;
+
+    margin: 30px auto;
+
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--orange)
+    );
+}
+
+.connection span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #777;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #020305;
+
+    border-top: 1px solid #151b24;
+}
+
+.footer-logo {
+    font-size: 35px;
+}
+
+.footer-logo span {
+    color: #555;
+    margin: 0 10px;
+}
+
+footer h3 {
+    font-family: "Orbitron", sans-serif;
+    margin: 10px 0;
+}
+
+footer p {
+    color: #89919e;
+}
+
+.copyright {
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .characters-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .football-content,
+    .naruto-content,
+    .gremio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-symbol {
+        display: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding-top: 150px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .gremio-info,
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 80px 20px;
+    }
+
+    .connection {
+        padding: 80px 20px;
+    }
+
+    .connection span {
+        line-height: 2;
+    }
 }
