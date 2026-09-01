@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #05070d;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* CABEÇALHO */
+
+header {
+    background-color: #070b14;
+    border-bottom: 1px solid #17243d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: #1687ff;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #b8c4d8;
+}
+
+nav ul li a:hover {
+    color: #1687ff;
+}
+
+/* INÍCIO */
+
+.inicio {
+    max-width: 1100px;
+    min-height: 650px;
+    margin: auto;
+    padding: 80px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.inicio-texto {
+    max-width: 650px;
+}
+
+.pequeno-titulo,
+.titulo-secao {
+    color: #1687ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.inicio h2 {
+    font-size: 58px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.inicio-texto > p {
+    color: #9ba9bf;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+.botao {
+    display: inline-block;
+    background-color: #0875e1;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background-color: #005bb8;
+}
+
+/* CARD PRINCIPAL */
+
+.inicio-card {
+    width: 300px;
+    padding: 35px;
+
+    background-color: #0d1626;
+
+    border: 1px solid #18375e;
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.controle {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.inicio-card h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.inicio-card p {
+    color: #9ba9bf;
+}
+
+/* SEÇÕES */
+
+.secao {
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.secao h2,
+.sobre h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.descricao {
+    max-width: 700px;
+    margin: auto;
+    color: #9ba9bf;
+    font-size: 17px;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.card {
+    background-color: #0b111d;
+    border: 1px solid #172a46;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #1687ff;
+}
+
+.icone {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #9ba9bf;
+}
+
+/* FUTEBOL */
+
+.futebol {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 60px;
+    align-items: center;
+}
+
+.futebol-texto h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.futebol-texto h3 {
+    color: #1687ff;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.futebol-texto p {
+    color: #9ba9bf;
+    margin-bottom: 15px;
+}
+
+.gremio-card {
+    padding: 40px;
+    text-align: center;
+
+    background-color: #0b111d;
+
+    border: 1px solid #1c416c;
+    border-radius: 20px;
+}
+
+.escudo {
+    font-size: 75px;
+    margin-bottom: 15px;
+}
+
+.gremio-card h3 {
+    color: #1687ff;
+    font-size: 25px;
+}
+
+/* SOBRE */
+
+.sobre {
+    max-width: 850px;
+    margin: auto;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.sobre > p {
+    color: #9ba9bf;
+    font-size: 17px;
+}
+
+.cores {
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cores span {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.azul {
+    background-color: #1687ff;
+}
+
+.preto {
+    background-color: #000000;
+    border: 1px solid #333333;
+}
+
+.cores p {
+    color: #9ba9bf;
+}
+
+/* RODAPÉ */
+
+footer {
+    background-color: #03050a;
+    border-top: 1px solid #17243d;
+    padding: 35px 20px;
+    text-align: center;
+    color: #6f7c91;
+}
+
+footer h3 {
+    color: #1687ff;
+    margin-bottom: 8px;
+}
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .inicio {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .inicio h2 {
+        font-size: 40px;
+    }
+
+    .inicio-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .futebol {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .gremio-card {
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .secao h2,
+    .sobre h2 {
+        font-size: 32px;
+    }
+}
