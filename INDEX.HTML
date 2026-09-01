@@ -2,2254 +2,506 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>Universo Naruto</title>
 
-    <title>Futebol, Grêmio e Naruto</title>
-
-    <style>
-
-        /* ==================================================
-           CONFIGURAÇÕES GERAIS
-        ================================================== */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050505;
-            color: white;
-            line-height: 1.6;
-        }
-
-        img {
-            width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        section {
-            padding: 90px 6%;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .titulo {
-            text-align: center;
-            margin-bottom: 55px;
-        }
-
-        .titulo small {
-            color: #00aaff;
-            font-weight: bold;
-            letter-spacing: 4px;
-        }
-
-        .titulo h2 {
-            font-size: 42px;
-            margin: 10px 0;
-        }
-
-        .titulo p {
-            color: #999;
-        }
-
-
-        /* ==================================================
-           MENU
-        ================================================== */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: rgba(2, 5, 10, 0.96);
-
-            border-bottom: 2px solid #008cff;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: auto;
-
-            min-height: 70px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 10px 20px;
-        }
-
-        .logo {
-            font-size: 21px;
-            font-weight: bold;
-        }
-
-        .logo .blue {
-            color: #008cff;
-        }
-
-        .logo .orange {
-            color: #ff6500;
-        }
-
-        nav ul {
-            list-style: none;
-
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            gap: 18px;
-        }
-
-        nav ul a {
-            font-size: 13px;
-            font-weight: bold;
-            color: #ddd;
-
-            transition: 0.3s;
-        }
-
-        nav ul a:hover {
-            color: #00aaff;
-        }
-
-
-        /* ==================================================
-           HERO
-        ================================================== */
-
-        .hero {
-            min-height: 700px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            position: relative;
-            overflow: hidden;
-
-            background:
-                linear-gradient(
-                    110deg,
-                    #020a16,
-                    #050505 48%,
-                    #180700
-                );
-        }
-
-        .hero:before {
-            content: "";
-
-            position: absolute;
-
-            width: 500px;
-            height: 500px;
-
-            border-radius: 50%;
-
-            background: #006eff;
-
-            filter: blur(150px);
-
-            opacity: 0.18;
-
-            left: -150px;
-            top: 100px;
-        }
-
-        .hero:after {
-            content: "";
-
-            position: absolute;
-
-            width: 500px;
-            height: 500px;
-
-            border-radius: 50%;
-
-            background: #ff4d00;
-
-            filter: blur(150px);
-
-            opacity: 0.15;
-
-            right: -150px;
-            bottom: 50px;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-
-            max-width: 850px;
-        }
-
-        .hero small {
-            color: #00aaff;
-
-            font-weight: bold;
-
-            letter-spacing: 5px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 90px);
-
-            line-height: 1;
-
-            margin: 25px 0;
-        }
-
-        .hero h1 .futebol {
-            color: #008cff;
-        }
-
-        .hero h1 .naruto {
-            color: #ff6500;
-        }
-
-        .hero h1 .mais {
-            color: white;
-        }
-
-        .hero p {
-            max-width: 700px;
-
-            margin: auto;
-
-            color: #ccc;
-
-            font-size: 18px;
-        }
-
-        .hero-buttons {
-            margin-top: 35px;
-        }
-
-        .botao {
-            display: inline-block;
-
-            padding: 14px 25px;
-
-            margin: 7px;
-
-            border-radius: 5px;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-        .botao:hover {
-            transform: translateY(-5px);
-        }
-
-        .botao-blue {
-            background: #006dcc;
-        }
-
-        .botao-orange {
-            background: #e65100;
-        }
-
-
-        /* ==================================================
-           SOBRE
-        ================================================== */
-
-        .sobre {
-            background: #080b10;
-        }
-
-        .sobre-grid {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 45px;
-
-            align-items: center;
-        }
-
-        .sobre-text h3 {
-            color: #00aaff;
-
-            font-size: 28px;
-
-            margin-bottom: 20px;
-        }
-
-        .sobre-text p {
-            color: #bbb;
-
-            margin-bottom: 18px;
-        }
-
-        .sobre-imagem {
-            border-radius: 15px;
-
-            overflow: hidden;
-
-            border: 2px solid #008cff;
-
-            box-shadow:
-                0 0 35px rgba(0, 140, 255, 0.2);
-        }
-
-
-        /* ==================================================
-           FUTEBOL
-        ================================================== */
-
-        .futebol {
-            background: #05080d;
-        }
-
-        .futebol .titulo small {
-            color: #00aaff;
-        }
-
-        .futebol-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 22px;
-        }
-
-        .futebol-card {
-            background: #0b1018;
-
-            border: 1px solid #16476d;
-
-            border-radius: 12px;
-
-            overflow: hidden;
-
-            transition: 0.35s;
-        }
-
-        .futebol-card:hover {
-            transform: translateY(-8px);
-
-            border-color: #00aaff;
-
-            box-shadow:
-                0 10px 35px rgba(0, 140, 255, 0.2);
-        }
-
-        .futebol-card img {
-            height: 190px;
-
-            object-fit: cover;
-        }
-
-        .futebol-card-content {
-            padding: 25px;
-        }
-
-        .futebol-card h3 {
-            color: #00aaff;
-
-            margin-bottom: 10px;
-        }
-
-        .futebol-card p {
-            color: #aaa;
-
-            font-size: 14px;
-        }
-
-
-        /* ==================================================
-           POSIÇÕES
-        ================================================== */
-
-        .posicoes {
-            background: #080b11;
-        }
-
-        .posicoes-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 18px;
-        }
-
-        .posicao {
-            padding: 25px;
-
-            text-align: center;
-
-            background: #05070b;
-
-            border: 1px solid #1b3147;
-
-            border-radius: 10px;
-        }
-
-        .posicao .icone {
-            font-size: 40px;
-        }
-
-        .posicao h3 {
-            color: #00aaff;
-
-            margin: 10px 0;
-        }
-
-        .posicao p {
-            color: #999;
-
-            font-size: 13px;
-        }
-
-
-        /* ==================================================
-           GRÊMIO
-        ================================================== */
-
-        .gremio {
-            background:
-                linear-gradient(
-                    135deg,
-                    #00172d,
-                    #03070c
-                );
-
-            border-top: 4px solid #008cff;
-            border-bottom: 4px solid white;
-        }
-
-        .gremio .titulo small {
-            color: #00aaff;
-        }
-
-        .gremio-intro {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 45px;
-
-            align-items: center;
-
-            margin-bottom: 60px;
-        }
-
-        .gremio-intro img {
-            height: 330px;
-
-            object-fit: cover;
-
-            border-radius: 15px;
-
-            border: 2px solid #008cff;
-        }
-
-        .gremio-text h3 {
-            font-size: 30px;
-
-            color: #00aaff;
-
-            margin-bottom: 20px;
-        }
-
-        .gremio-text p {
-            color: #c5cbd3;
-
-            margin-bottom: 17px;
-        }
-
-
-        /* GRÊMIO CARDS */
-
-        .gremio-cards {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 18px;
-        }
-
-        .gremio-card {
-            padding: 30px 20px;
-
-            text-align: center;
-
-            background: #05090f;
-
-            border: 1px solid #15507d;
-
-            border-radius: 10px;
-
-            transition: 0.3s;
-        }
-
-        .gremio-card:hover {
-            transform: translateY(-7px);
-
-            border-color: #00aaff;
-        }
-
-        .gremio-card .icone {
-            font-size: 40px;
-        }
-
-        .gremio-card h3 {
-            color: #00aaff;
-
-            margin: 10px 0;
-        }
-
-        .gremio-card p {
-            color: #999;
-
-            font-size: 13px;
-        }
-
-
-        /* ==================================================
-           ARENA E TORCIDA
-        ================================================== */
-
-        .arena {
-            background: #030508;
-        }
-
-        .arena-grid {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 25px;
-        }
-
-        .arena-card {
-            overflow: hidden;
-
-            border-radius: 15px;
-
-            background: #080d14;
-
-            border: 1px solid #17486b;
-        }
-
-        .arena-card img {
-            height: 280px;
-
-            object-fit: cover;
-        }
-
-        .arena-card div {
-            padding: 25px;
-        }
-
-        .arena-card h3 {
-            color: #00aaff;
-
-            margin-bottom: 10px;
-        }
-
-        .arena-card p {
-            color: #aaa;
-        }
-
-
-        /* ==================================================
-           LINHA DO TEMPO DO GRÊMIO
-        ================================================== */
-
-        .timeline {
-            background: #06101b;
-        }
-
-        .timeline-list {
-            max-width: 850px;
-
-            margin: auto;
-
-            border-left: 3px solid #008cff;
-        }
-
-        .timeline-item {
-            position: relative;
-
-            padding: 0 0 40px 35px;
-        }
-
-        .timeline-item:before {
-            content: "";
-
-            position: absolute;
-
-            width: 15px;
-            height: 15px;
-
-            border-radius: 50%;
-
-            background: #00aaff;
-
-            left: -9px;
-            top: 5px;
-
-            box-shadow:
-                0 0 15px #00aaff;
-        }
-
-        .timeline-item span {
-            color: #00aaff;
-
-            font-weight: bold;
-        }
-
-        .timeline-item h3 {
-            margin: 5px 0;
-
-            font-size: 22px;
-        }
-
-        .timeline-item p {
-            color: #999;
-        }
-
-
-        /* ==================================================
-           NARUTO
-        ================================================== */
-
-        .naruto {
-            background:
-                linear-gradient(
-                    135deg,
-                    #160500,
-                    #080303,
-                    #130000
-                );
-
-            border-top: 4px solid #ff6500;
-        }
-
-        .naruto .titulo small {
-            color: #ff6500;
-        }
-
-        .naruto-intro {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 45px;
-
-            align-items: center;
-        }
-
-        .naruto-intro img {
-            height: 380px;
-
-            object-fit: cover;
-
-            border-radius: 15px;
-
-            border: 2px solid #ff6500;
-        }
-
-        .naruto-text h3 {
-            font-size: 30px;
-
-            color: #ff6500;
-
-            margin-bottom: 20px;
-        }
-
-        .naruto-text p {
-            color: #c9c0bc;
-
-            margin-bottom: 18px;
-        }
-
-
-        /* ==================================================
-           UNIVERSO NARUTO
-        ================================================== */
-
-        .universo {
-            background: #080404;
-        }
-
-        .universo-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .universo-card {
-            padding: 30px;
-
-            background: #100807;
-
-            border: 1px solid #572015;
-
-            border-radius: 10px;
-
-            transition: 0.3s;
-        }
-
-        .universo-card:hover {
-            transform: translateY(-8px);
-
-            border-color: #ff6500;
-        }
-
-        .universo-card h3 {
-            color: #ff6500;
-
-            margin-bottom: 12px;
-        }
-
-        .universo-card p {
-            color: #999;
-
-            font-size: 14px;
-        }
-
-
-        /* ==================================================
-           PERSONAGENS
-        ================================================== */
-
-        .personagens {
-            background: #030303;
-        }
-
-        .personagens-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 20px;
-        }
-
-        .personagem {
-            min-height: 540px;
-
-            background: #0b0b0b;
-
-            border-radius: 14px;
-
-            overflow: hidden;
-
-            transition: 0.4s;
-        }
-
-        .personagem:hover {
-            transform: translateY(-10px);
-        }
-
-        .personagem img {
-            height: 250px;
-
-            object-fit: cover;
-        }
-
-        .personagem-conteudo {
-            padding: 25px;
-        }
-
-        .personagem h3 {
-            font-size: 25px;
-
-            margin-bottom: 5px;
-        }
-
-        .personagem h4 {
-            font-size: 11px;
-
-            letter-spacing: 1px;
-
-            margin-bottom: 15px;
-        }
-
-        .personagem p {
-            color: #999;
-
-            font-size: 13px;
-        }
-
-
-        /* NARUTO */
-
-        .card-naruto {
-            border: 2px solid #ff6500;
-        }
-
-        .card-naruto h3,
-        .card-naruto h4 {
-            color: #ff6500;
-        }
-
-
-        /* OBITO */
-
-        .card-obito {
-            border: 2px solid #7925aa;
-
-            background: #0c0610;
-        }
-
-        .card-obito h3,
-        .card-obito h4 {
-            color: #b54cff;
-        }
-
-
-        /* KAKASHI */
-
-        .card-kakashi {
-            border: 2px solid #378ac9;
-
-            background: #060b11;
-        }
-
-        .card-kakashi h3,
-        .card-kakashi h4 {
-            color: #55b5ff;
-        }
-
-
-        /* ITACHI */
-
-        .card-itachi {
-            border: 2px solid #a00000;
-
-            background: #100303;
-        }
-
-        .card-itachi h3,
-        .card-itachi h4 {
-            color: #ff3030;
-        }
-
-
-        /* ==================================================
-           ANÁLISE DOS PERSONAGENS
-        ================================================== */
-
-        .analise {
-            background:
-                linear-gradient(
-                    110deg,
-                    #070b12,
-                    #100303
-                );
-        }
-
-        .analise-grid {
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 25px;
-        }
-
-        .analise-box {
-            padding: 30px;
-
-            background: rgba(0, 0, 0, 0.4);
-
-            border-radius: 10px;
-
-            border-left: 4px solid #ff6500;
-        }
-
-        .analise-box h3 {
-            color: #ff6500;
-
-            margin-bottom: 12px;
-        }
-
-        .analise-box p {
-            color: #aaa;
-
-            font-size: 14px;
-        }
-
-
-        /* ==================================================
-           GALERIA
-        ================================================== */
-
-        .galeria {
-            background: #050505;
-        }
-
-        .galeria-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 12px;
-        }
-
-        .galeria-item {
-            overflow: hidden;
-
-            height: 230px;
-
-            border-radius: 10px;
-
-            border: 1px solid #222;
-        }
-
-        .galeria-item img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            transition: 0.5s;
-        }
-
-        .galeria-item:hover img {
-            transform: scale(1.1);
-        }
-
-
-        /* ==================================================
-           COMPARAÇÃO
-        ================================================== */
-
-        .comparacao {
-            background: #080b10;
-        }
-
-        table {
-            width: 100%;
-
-            border-collapse: collapse;
-
-            background: #05070a;
-        }
-
-        th,
-        td {
-            padding: 18px;
-
-            border: 1px solid #1d2730;
-
-            text-align: center;
-        }
-
-        th {
-            background: #008cff;
-
-            color: white;
-        }
-
-        td {
-            color: #aaa;
-        }
-
-
-        /* ==================================================
-           FRASE FINAL
-        ================================================== */
-
-        .final {
-            padding: 120px 20px;
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #001326,
-                    #050505 45%,
-                    #190600
-                );
-        }
-
-        .final .simbolos {
-            font-size: 55px;
-
-            margin-bottom: 20px;
-        }
-
-        .final h2 {
-            font-size: clamp(30px, 6vw, 65px);
-
-            margin-bottom: 20px;
-        }
-
-        .final .azul {
-            color: #008cff;
-        }
-
-        .final .laranja {
-            color: #ff6500;
-        }
-
-        .final p {
-            color: #aaa;
-
-            max-width: 700px;
-
-            margin: auto;
-        }
-
-
-        /* ==================================================
-           RODAPÉ
-        ================================================== */
-
-        footer {
-            padding: 45px 20px;
-
-            text-align: center;
-
-            background: #020202;
-
-            border-top: 1px solid #222;
-        }
-
-        footer h3 {
-            margin-bottom: 10px;
-        }
-
-        footer p {
-            color: #777;
-
-            font-size: 13px;
-        }
-
-
-        /* ==================================================
-           RESPONSIVIDADE
-        ================================================== */
-
-        @media (max-width: 1000px) {
-
-            .futebol-grid,
-            .universo-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .personagens-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .gremio-cards {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .posicoes-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .galeria-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-        }
-
-
-        @media (max-width: 700px) {
-
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            nav ul {
-                gap: 10px;
-            }
-
-            section {
-                padding: 70px 20px;
-            }
-
-            .sobre-grid,
-            .gremio-intro,
-            .naruto-intro,
-            .arena-grid,
-            .analise-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .futebol-grid,
-            .universo-grid,
-            .personagens-grid,
-            .gremio-cards,
-            .posicoes-grid,
-            .galeria-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                min-height: 600px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .titulo h2 {
-                font-size: 32px;
-            }
-
-            .personagem {
-                min-height: auto;
-            }
-
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- CABEÇALHO -->
 
-    <!-- ==================================================
-         MENU
-    ================================================== -->
+    <header class="header">
 
-    <header>
+        <div class="logo">
+            NARUTO
+        </div>
 
-        <nav>
-
-            <div class="logo">
-
-                ⚽
-                <span class="blue">FUTEBOL</span>
-                +
-                <span class="orange">NARUTO</span>
-                🍥
-
-            </div>
-
-            <ul>
-
-                <li>
-                    <a href="#inicio">Início</a>
-                </li>
-
-                <li>
-                    <a href="#futebol">Futebol</a>
-                </li>
-
-                <li>
-                    <a href="#gremio">Grêmio</a>
-                </li>
-
-                <li>
-                    <a href="#naruto">Naruto</a>
-                </li>
-
-                <li>
-                    <a href="#personagens">Personagens</a>
-                </li>
-
-                <li>
-                    <a href="#galeria">Galeria</a>
-                </li>
-
-            </ul>
-
+        <nav class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#principais">Personagens</a>
+            <a href="#uchiha">Uchiha</a>
+            <a href="#coadjuvantes">Coadjuvantes</a>
         </nav>
 
     </header>
 
 
-    <!-- ==================================================
-         HERO
-    ================================================== -->
+    <!-- INÍCIO -->
 
-    <section class="hero" id="inicio">
+    <main>
 
-        <div class="hero-content">
+        <section class="hero" id="inicio">
 
-            <small>
-                MINHAS GRANDES PAIXÕES
-            </small>
+            <div class="hero-content">
 
-            <h1>
+                <p class="subtitle">
+                    UNIVERSO SHINOBI
+                </p>
 
-                <span class="futebol">
-                    FUTEBOL
-                </span>
-
-                <span class="mais">
-                    +
-                </span>
-
-                <span class="naruto">
+                <h1>
                     NARUTO
-                </span>
+                    <span>UZUMAKI</span>
+                </h1>
 
-            </h1>
+                <p class="hero-text">
+                    Uma história sobre amizade, rivalidade,
+                    superação, perdas e a força de nunca
+                    desistir dos próprios sonhos.
+                </p>
+
+                <a href="#principais" class="button">
+                    EXPLORAR PERSONAGENS
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUÇÃO -->
+
+        <section class="intro">
+
+            <div class="container">
+
+                <p class="section-tag">
+                    O CAMINHO DO NINJA
+                </p>
+
+                <h2>
+                    Uma história que marcou gerações
+                </h2>
+
+                <p class="intro-text">
+                    Naruto acompanha a jornada de Naruto Uzumaki,
+                    um jovem ninja que cresceu sendo rejeitado
+                    pela Vila da Folha, mas que nunca abandonou
+                    seu sonho de se tornar Hokage.
+                </p>
+
+                <p class="intro-text">
+                    Ao longo de sua jornada, Naruto encontra amigos,
+                    rivais, professores e inimigos que mudam sua
+                    forma de enxergar o mundo.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERSONAGENS PRINCIPAIS -->
+
+        <section class="characters" id="principais">
+
+            <div class="container">
+
+                <p class="section-tag">
+                    PERSONAGENS PRINCIPAIS
+                </p>
+
+                <h2>
+                    Os cinco grandes nomes
+                </h2>
+
+                <div class="character-grid">
+
+
+                    <!-- NARUTO -->
+
+                    <article class="card naruto">
+
+                        <div class="card-number">
+                            01
+                        </div>
+
+                        <div class="character-icon">
+                            🍥
+                        </div>
+
+                        <h3>
+                            Naruto
+                        </h3>
+
+                        <p class="role">
+                            O ninja que nunca desiste
+                        </p>
+
+                        <p>
+                            Determinado e cheio de energia,
+                            Naruto transforma a solidão em
+                            força e luta para ser reconhecido.
+                        </p>
+
+                    </article>
+
+
+                    <!-- SASUKE -->
+
+                    <article class="card sasuke">
+
+                        <div class="card-number">
+                            02
+                        </div>
+
+                        <div class="character-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            Sasuke
+                        </h3>
+
+                        <p class="role">
+                            O vingador do clã Uchiha
+                        </p>
+
+                        <p>
+                            Marcado pela tragédia de seu clã,
+                            Sasuke percorre um caminho em busca
+                            de poder e respostas.
+                        </p>
+
+                    </article>
+
+
+                    <!-- ITACHI -->
+
+                    <article class="card itachi">
+
+                        <div class="card-number">
+                            03
+                        </div>
+
+                        <div class="character-icon">
+                            👁
+                        </div>
+
+                        <h3>
+                            Itachi
+                        </h3>
+
+                        <p class="role">
+                            O shinobi do sacrifício
+                        </p>
+
+                        <p>
+                            Inteligente e misterioso, Itachi possui
+                            uma das histórias mais complexas do
+                            universo Naruto.
+                        </p>
+
+                    </article>
+
+
+                    <!-- OBITO -->
+
+                    <article class="card obito">
+
+                        <div class="card-number">
+                            04
+                        </div>
+
+                        <div class="character-icon">
+                            🌀
+                        </div>
+
+                        <h3>
+                            Obito
+                        </h3>
+
+                        <p class="role">
+                            O homem por trás da máscara
+                        </p>
+
+                        <p>
+                            Um antigo sonho de se tornar Hokage
+                            acaba sendo transformado por perdas
+                            e acontecimentos traumáticos.
+                        </p>
+
+                    </article>
+
+
+                    <!-- KAKASHI -->
+
+                    <article class="card kakashi">
+
+                        <div class="card-number">
+                            05
+                        </div>
+
+                        <div class="character-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            Kakashi
+                        </h3>
+
+                        <p class="role">
+                            O ninja copiador
+                        </p>
+
+                        <p>
+                            Professor do Time 7, Kakashi é um ninja
+                            experiente que carrega importantes
+                            lembranças de seu passado.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ITACHI E OBITO -->
+
+        <section class="dark-section" id="uchiha">
+
+            <div class="container">
+
+                <p class="section-tag">
+                    CLÃ UCHIHA
+                </p>
+
+                <h2>
+                    Histórias marcadas pela perda
+                </h2>
+
+                <div class="story-grid">
+
+                    <article class="story itachi-story">
+
+                        <span class="story-symbol">
+                            👁
+                        </span>
+
+                        <h3>
+                            Itachi Uchiha
+                        </h3>
+
+                        <p>
+                            Itachi é lembrado como um dos shinobi
+                            mais habilidosos e inteligentes da obra.
+                            Sua relação com Sasuke é uma das partes
+                            mais importantes de sua história.
+                        </p>
+
+                        <p>
+                            Suas escolhas foram influenciadas por
+                            responsabilidades, conflitos e pelo
+                            desejo de proteger aquilo que considerava
+                            importante.
+                        </p>
+
+                    </article>
+
+
+                    <article class="story obito-story">
+
+                        <span class="story-symbol">
+                            🌀
+                        </span>
+
+                        <h3>
+                            Obito Uchiha
+                        </h3>
+
+                        <p>
+                            Obito começou sua trajetória sonhando
+                            em se tornar Hokage e proteger seus
+                            companheiros.
+                        </p>
+
+                        <p>
+                            Depois de sofrer perdas profundas,
+                            sua visão do mundo mudou completamente,
+                            levando-o por um caminho muito diferente
+                            daquele que imaginava seguir.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COADJUVANTES -->
+
+        <section class="support" id="coadjuvantes">
+
+            <div class="container">
+
+                <p class="section-tag">
+                    OUTROS SHINOBI
+                </p>
+
+                <h2>
+                    Coadjuvantes importantes
+                </h2>
+
+                <div class="support-grid">
+
+                    <article>
+                        <h3>Sakura</h3>
+                        <p>
+                            Integrante do Time 7 e uma importante
+                            ninja médica.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Jiraiya</h3>
+                        <p>
+                            Um dos lendários Sannin e mestre
+                            de Naruto.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Minato</h3>
+                        <p>
+                            Quarto Hokage e pai de Naruto.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Gaara</h3>
+                        <p>
+                            Antigo rival de Naruto que se tornou
+                            um importante aliado.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Hinata</h3>
+                        <p>
+                            Ninja do clã Hyuga que desenvolveu
+                            grande coragem durante sua jornada.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Shikamaru</h3>
+                        <p>
+                            Um dos maiores estrategistas
+                            da Vila da Folha.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Neji</h3>
+                        <p>
+                            Um dos membros mais talentosos
+                            do clã Hyuga.
+                        </p>
+                    </article>
+
+                    <article>
+                        <h3>Rock Lee</h3>
+                        <p>
+                            Um ninja que mostrou que esforço
+                            e treinamento podem superar limites.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TIME 7 -->
+
+        <section class="team">
+
+            <div class="container">
+
+                <p class="section-tag">
+                    EQUIPE
+                </p>
+
+                <h2>
+                    Time 7
+                </h2>
+
+                <div class="team-box">
+
+                    <div>
+                        <strong>NARUTO</strong>
+                        <span>Determinação</span>
+                    </div>
+
+                    <div>
+                        <strong>SASUKE</strong>
+                        <span>Rivalidade</span>
+                    </div>
+
+                    <div>
+                        <strong>SAKURA</strong>
+                        <span>Força</span>
+                    </div>
+
+                    <div>
+                        <strong>KAKASHI</strong>
+                        <span>Experiência</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FRASE FINAL -->
+
+        <section class="final">
 
             <p>
-                Entre a paixão pelo futebol, o amor pelo Grêmio
-                e as histórias de determinação do universo ninja,
-                esta página representa alguns dos assuntos que
-                mais despertam meu interesse.
+                O verdadeiro poder de um shinobi
+                está nas pessoas que ele escolhe proteger.
             </p>
 
-            <div class="hero-buttons">
+            <h2>
+                NUNCA DESISTA.
+            </h2>
 
-                <a
-                    href="#gremio"
-                    class="botao botao-blue">
-                    🔵⚫ Grêmio
-                </a>
+            <span>
+                — O caminho de Naruto
+            </span>
 
-                <a
-                    href="#naruto"
-                    class="botao botao-orange">
-                    🍥 Naruto
-                </a>
+        </section>
 
-            </div>
+    </main>
 
-        </div>
 
-    </section>
+    <!-- RODAPÉ -->
 
+    <footer>
 
-    <!-- ==================================================
-         SOBRE
-    ================================================== -->
+        <p>
+            Projeto acadêmico desenvolvido com HTML e CSS.
+        </p>
 
-    <section class="sobre">
+        <p>
+            Universo Naruto • Arquivo Shinobi
+        </p>
 
-        <div class="container">
+    </footer>
 
-            <div class="titulo">
+</body>
 
-                <small>
-                    SOBRE O PROJETO
-                </small>
-
-                <h2>
-                    DUAS PAIXÕES
-                </h2>
-
-                <p>
-                    Esporte, anime, histórias e personagens.
-                </p>
-
-            </div>
-
-
-            <div class="sobre-grid">
-
-                <div class="sobre-text">
-
-                    <h3>
-                        Por que esses temas?
-                    </h3>
-
-                    <p>
-                        O futebol representa competição, emoção,
-                        trabalho em equipe e paixão. Dentro desse
-                        universo, o Grêmio possui um significado
-                        especial por sua história e identidade.
-                    </p>
-
-                    <p>
-                        Naruto apresenta outro tipo de competição:
-                        a busca constante por evolução. Seus
-                        personagens enfrentam perdas, dificuldades
-                        e escolhas que mudam suas vidas.
-                    </p>
-
-                    <p>
-                        A combinação dos dois temas permite criar
-                        uma página colorida e diferente, misturando
-                        o azul e preto do futebol com o laranja,
-                        vermelho e preto do universo ninja.
-                    </p>
-
-                </div>
-
-
-                <div class="sobre-imagem">
-
-                    <img
-                        src="img/futebol.jpg"
-                        alt="Imagem relacionada ao futebol">
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         FUTEBOL
-    ================================================== -->
-
-    <section class="futebol" id="futebol">
-
-        <div class="container">
-
-            <div class="titulo">
-
-                <small>
-                    ⚽ FUTEBOL
-                </small>
-
-                <h2>
-                    MUITO MAIS QUE UM ESPORTE
-                </h2>
-
-                <p>
-                    Estratégia, técnica, paixão e trabalho em equipe.
-                </p>
-
-            </div>
-
-
-            <div class="futebol-grid">
-
-
-                <div class="futebol-card">
-
-                    <img
-                        src="img/futebol.jpg"
-                        alt="Campo de futebol">
-
-                    <div class="futebol-card-content">
-
-                        <h3>
-                            História
-                        </h3>
-
-                        <p>
-                            O futebol se tornou um dos esportes
-                            mais populares do planeta, envolvendo
-                            culturas, países e gerações diferentes.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="futebol-card">
-
-                    <img
-                        src="img/arena.jpg"
-                        alt="Estádio de futebol">
-
-                    <div class="futebol-card-content">
-
-                        <h3>
-                            Torcida
-                        </h3>
-
-                        <p>
-                            A torcida transforma os estádios em
-                            ambientes de emoção, criando uma identidade
-                            que vai muito além dos 90 minutos.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="futebol-card">
-
-                    <img
-                        src="img/gremio.jpg"
-                        alt="Grêmio">
-
-                    <div class="futebol-card-content">
-
-                        <h3>
-                            Clubes
-                        </h3>
-
-                        <p>
-                            Os clubes criam tradições, rivalidades,
-                            ídolos e histórias que passam de geração
-                            para geração.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         POSIÇÕES DO FUTEBOL
-    ================================================== -->
-
-    <section class="posicoes">
-
-        <div class="container">
-
-            <div class="titulo">
-
-                <small>
-                    ESTRATÉGIA
-                </small>
-
-                <h2>
-                    POSIÇÕES NO FUTEBOL
-                </h2>
-
-                <p>
-                    Cada jogador possui uma função importante.
-                </p>
-
-            </div>
-
-
-            <div class="posicoes-grid">
-
-
-                <div class="posicao">
-
-                    <div class="icone">
-                        🧤
-                    </div>
-
-                    <h3>
-                        Goleiro
-                    </h3>
-
-                    <p>
-                        Responsável por proteger o gol
-                        e organizar a defesa.
-                    </p>
-
-                </div>
-
-
-                <div class="posicao">
-
-                    <div class="icone">
-                        🛡️
-                    </div>
-
-                    <h3>
-                        Defesa
-                    </h3>
-
-                    <p>
-                        Atua na proteção da área e na
-                        recuperação da bola.
-                    </p>
-
-                </div>
-
-
-                <div class="posicao">
-
-                    <div class="icone">
-                        🎯
-                    </div>
-
-                    <h3>
-                        Meio-campo
-                    </h3>
-
-                    <p>
-                        Ajuda na criação das jogadas e
-                        na ligação entre defesa e ataque.
-                    </p>
-
-                </div>
-
-
-                <div class="posicao">
-
-                    <div class="icone">
-                        ⚡
-                    </div>
-
-                    <h3>
-                        Ataque
-                    </h3>
-
-                    <p>
-                        Tem como principal objetivo criar
-                        oportunidades e marcar gols.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         GRÊMIO
-    ================================================== -->
-
-    <section class="gremio" id="gremio">
-
-        <div class="container">
-
-            <div class="titulo">
-
-                <small>
-                    🔵⚫⚪ PAIXÃO TRICOLOR
-                </small>
-
-                <h2>
-                    GRÊMIO
-                </h2>
-
-                <p>
-                    História, tradição, torcida e identidade.
-                </p>
-
-            </div>
-
-
-            <div class="gremio-intro">
-
-
-                <img
-                    src="img/gremio.jpg"
-                    alt="Grêmio">
-
-
-                <div class="gremio-text">
-
-                    <h3>
-                        Grêmio Foot-Ball Porto Alegrense
-                    </h3>
-
-                    <p>
-                        O Grêmio é um dos clubes tradicionais
-                        do futebol brasileiro e possui uma
-                        identidade fortemente associada às
-                        cores azul, preto e branco.
-                    </p>
-
-                    <p>
-                        Sua história é formada por grandes
-                        jogadores, conquistas, partidas marcantes
-                        e uma torcida conhecida pela paixão
-                        demonstrada nos estádios.
-                    </p>
-
-                    <p>
-                        Para um torcedor, apoiar um clube significa
-                        acompanhar tanto os grandes momentos quanto
-                        as fases difíceis.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="gremio-cards">
-
-
-                <div class="gremio-card">
-
-                    <div class="icone">
-                        🔵
-                    </div>
-
-                    <h3>
-                        Azul
-                    </h3>
-
-                    <p>
-                        Uma das cores que representam
-                        a identidade tricolor.
-                    </p>
-
-                </div>
-
-
-                <div class="gremio-card">
-
-                    <div class="icone">
-                        ⚫
-                    </div>
-
-                    <h3>
-                        Preto
-                    </h3>
-
-                    <p>
-                        Presente na identidade visual
-                        tradicional do clube.
-                    </p>
-
-                </div>
-
-
-                <div class="gremio-card">
-
-                    <div class="icone">
-                        ⚪
-                    </div>
-
-                    <h3>
-                        Branco
-                    </h3>
-
-                    <p>
-                        Completa a combinação clássica
-                        das cores do Grêmio.
-                    </p>
-
-                </div>
-
-
-                <div class="gremio-card">
-
-                    <div class="icone">
-                        🏆
-                    </div>
-
-                    <h3>
-                        Conquistas
-                    </h3>
-
-                    <p>
-                        Uma história construída com
-                        títulos e grandes campanhas.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         ARENA E TORCIDA
-    ================================================== -->
-
-    <section class="arena">
-
-        <div class="container">
-
-            <div class="titulo">
-
-                <small>
-                    CASA E TORCIDA
-                </small>
-
-                <h2>
-                    A FORÇA DO ESTÁDIO
-                </h2>
-
-                <p>
-                    O futebol também é vivido fora do campo.
-                </p>
-
-            </div>
-
-
-            <div class="arena-grid">
-
-
-                <div class="arena-card">
-
-                    <img
-                        src="img/arena.jpg"
-                        alt="Arena do Grêmio">
-
-                    <div>
-
-                        <h3>
-                            🏟️ Arena do Grêmio
-                        </h3>
-
-                        <p>
-                            O estádio é um dos principais símbolos
-                            modernos do clube e recebe partidas,
-                            eventos e milhares de torcedores.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="arena-card">
-
-                    <img
-                        src="img/torcida.jpg"
-                        alt="Torcida do Grêmio">
-
-                    <div>
-
-                        <h3>
-                            🔥 A Torcida
-                        </h3>
-
-                        <p>
-                            Bandeiras, cantos e a energia das
-                            arquibancadas fazem parte da experiência
-                            de acompanhar o Tricolor.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         LINHA DO TEMPO
-    ================================================== -->
-
-    <section class="timeline">
-
-        <div class="container">
-
-            <div class="titulo">
-
-                <small>
-                    HISTÓRIA
-                </small>
-
-                <h2>
-                    MOMENTOS MARCANTES
-                </h2>
-
-                <p>
-                    Uma pequena linha do tempo do Grêmio.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-list">
-
-
-                <div class="timeline-item">
-
-                    <span>
-                        1903
-                    </span>
-
-                    <h3>
-                        Fundação
-                    </h3>
-
-                    <p>
-                        O Grêmio Foot-Ball Porto Alegrense
-                        é fundado em Porto Alegre.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <span>
-                        1983
-                    </span>
-
-                    <h3>
-                        Conquista Mundial
-                    </h3>
-
-                    <p>
-                        O clube conquista a Copa Intercontinental,
-                        consolidando um dos capítulos mais importantes
-                        de sua história.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <span>
-                        Libertadores
-                    </span>
-
-                    <h3>
-                        Grandes campanhas
-                    </h3>
-
-                    <p>
-                        O Grêmio construiu uma trajetória importante
-                        na principal competição continental.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item">
-
-                    <span>
-                        Presente
-                    </span>
-
-                    <h3>
-                        Uma paixão que continua
-                    </h3>
-
-                    <p>
-                        A história continua sendo construída
-                        a cada nova geração de jogadores e torcedores.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         NARUTO
-    ================================================== -->
-
-    <section class="naruto" id="naruto">
-
-        <div class="container">
-
-            <div class="titulo">
-
-                <small>
-                    🍥 CAMINHO NINJA
-                </small>
-
-                <h2>
-                    NARUTO
-                </h2>
-
-                <p>
-                    Determinação, amizade, perda e superação.
-                </p>
-
-            </div>
-
-
-            <div class="naruto-intro">
-
-
-                <img
-                    src="img/naruto.jpg"
-                    alt="Naruto">
-
-
-                <div class="naruto-text">
-
-                    <h3>
-                        Naruto Uzumaki
-                    </h3>
-
-                    <p>
-                        Naruto é um jovem ninja que começa sua
-                        trajetória enfrentando rejeição e dificuldades.
-                    </p>
-
-                    <p>
-                        Mesmo sendo subestimado, ele mantém seu
-                        objetivo e procura conquistar o reconhecimento
-                        das pessoas ao seu redor.
-                    </p>
-
-                    <p>
-                        Sua jornada envolve amizade, rivalidade,
-                        batalhas e principalmente a ideia de que
-                        desistir não faz parte de seu caminho.
-                    </p>
-
-                    <p>
-                        O personagem evolui tanto em força quanto
-                        em maturidade, tornando-se uma das figuras
-                        centrais da história.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         UNIVERSO NARUTO
-    ================================================== -->
-
-    <section class="universo">
-
-        <div class="container">
-
-            <div class="titulo">
-
-                <small>
-                    🌎 UNIVERSO NINJA
-                </small>
-
-                <h2>
-                    MUITO ALÉM DO NARUTO
-                </h2>
-
-                <p>
-                    Elementos que tornam a história tão interessante.
-                </p>
-
-            </div>
-
-
-            <div class="universo-grid">
-
-
-                <div class="universo-card">
-
-                    <h3>
-                        🏘️ Vilas Ninja
-                    </h3>
-
-                    <p>
-                        O mundo de Naruto é dividido em diferentes
-                        vilas, cada uma com sua própria estrutura,
-                        ninjas e tradições.
-                    </p>
-
-                </div>
-
-
-                <div class="universo-card">
-
-                    <h3>
-                        👁️ Clãs
-                    </h3>
-
-                    <p>
-                        Clãs como Uchiha e Hyuga possuem técnicas,
-                        histórias e conflitos que influenciam
-                        diretamente a narrativa.
-                    </p>
-
-                </div>
-
-
-                <div class="universo-card">
-
-                    <h3>
-                        ☁️ Akatsuki
-                    </h3>
-
-                    <p>
-                        A organização reúne personagens extremamente
-                        poderosos e possui papel fundamental em
-                        diferentes momentos da história.
-                    </p>
-
-                </div>
-
-
-                <div class="universo-card">
-
-                    <h3>
-                        ⚔️ Jutsus
-                    </h3>
-
-                    <p>
-                        Técnicas ninja são utilizadas em batalhas
-                        e possuem diferentes características,
-                        elementos e níveis de dificuldade.
-                    </p>
-
-                </div>
-
-
-                <div class="universo-card">
-
-                    <h3>
-                        🔥 Chakra
-                    </h3>
-
-                    <p>
-                        O chakra é uma das bases do sistema de
-                        habilidades dos ninjas e permite a utilização
-                        de diferentes técnicas.
-                    </p>
-
-                </div>
-
-
-                <div class="universo-card">
-
-                    <h3>
-                        👑 Hokage
-                    </h3>
-
-                    <p>
-                        O Hokage é uma das maiores posições dentro
-                        da Vila da Folha e representa liderança
-                        e responsabilidade.
-                    </p>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         PERSONAGENS
-    ================================================== -->
-
-    <section class="personagens" id="personagens">
-
-        <div class="container">
-
-            <div class="titulo">
-
-                <small>
-                    👁️ PERSONAGENS
-                </small>
-
-                <h2>
-                    QUATRO HISTÓRIAS
-                </h2>
-
-                <p>
-                    Naruto, Obito, Kakashi e Itachi.
-                </p>
-
-            </div>
-
-
-            <div class="personagens-grid">
-
-
-                <!-- NARUTO -->
-
-                <article class="personagem card-naruto">
-
-                    <img
-                        src="img/naruto.jpg"
-                        alt="Naruto Uzumaki">
-
-                    <div class="personagem-conteudo">
-
-                        <h3>
-                            NARUTO
-                        </h3>
-
-                        <h4>
-                            O NINJA QUE NUNCA DESISTIU
-                        </h4>
-
-                        <p>
-                            Naruto representa determinação,
-                            coragem e amizade. Sua trajetória
-                            começa com rejeição, mas ele transforma
-                            suas dificuldades em motivação para
-                            continuar avançando.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- OBITO -->
-
-                <article class="personagem card-obito">
-
-                    <img
-                        src="img/obito.jpg"
-                        alt="Obito">
-
-                    <div class="personagem-conteudo">
-
-                        <h3>
-                            OBITO
-                        </h3>
-
-                        <h4>
-                            O HOMEM POR TRÁS DA MÁSCARA
-                        </h4>
-
-                        <p>
-                            Obito possui uma das trajetórias mais
-                            trágicas e complexas. Seus sonhos,
-                            perdas e experiências alteram sua visão
-                            sobre o mundo e sobre o significado da paz.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- KAKASHI -->
-
-                <article class="personagem card-kakashi">
-
-                    <img
-                        src="img/kakashi.jpg"
-                        alt="Kakashi">
-
-                    <div class="personagem-conteudo">
-
-                        <h3>
-                            KAKASHI
-                        </h3>
-
-                        <h4>
-                            O NINJA COPIADOR
-                        </h4>
-
-                        <p>
-                            Kakashi é um dos personagens mais
-                            experientes da história. Sua trajetória
-                            está profundamente relacionada a
-                            Obito, Rin e Minato.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ITACHI -->
-
-                <article class="personagem card-itachi">
-
-                    <img
-                        src="img/itachi.jpg"
-                        alt="Itachi">
-
-                    <div class="personagem-conteudo">
-
-                        <h3>
-                            ITACHI
-                        </h3>
-
-                        <h4>
-                            UM DESTINO TRÁGICO
-                        </h4>
-
-                        <p>
-                            Itachi é conhecido por sua inteligência,
-                            habilidades e pela complexidade de suas
-                            decisões. Sua relação com Sasuke é uma
-                            das partes mais marcantes de sua história.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ==================================================
-         ANÁLISE
-    ================================================== -->
-
-    <section class="analise">
-
-        <div class="container">
-
-            <div class="titulo">
-
-                <small>
-                    🔥 ANÁLISE
-                </small>
-
-                <h2>
-                    O QUE TORNA ESSES PERSONAGENS ESPECIAIS?
-                </h2>
-
-                <p>
-                    Diferentes caminhos, diferentes escolhas.
-                </p>
-
-            </div>
-
-
-            <div class="analise-grid">
-
-
-                <div class="analise-box">
-
-                    <h3>
-                        🍥 Naruto — Determinação
-                    </h3>
-
-                    <p>
-                        Naruto é marcado pela capacidade de continuar
-                        mesmo quando as circunstâncias parecem estar
-                        contra ele. Sua
+</html>

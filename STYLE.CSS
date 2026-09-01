@@ -1,39 +1,22 @@
-/* =========================
+/* =========================================
    CONFIGURAÇÕES GERAIS
-========================= */
+========================================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --black: #050609;
-    --dark: #0a0d14;
-
-    --blue: #00aaff;
-    --blue-dark: #0047a3;
-    --blue-light: #38c7ff;
-
-    --white: #ffffff;
-    --gray: #aeb6c4;
-
-    --orange: #ff6500;
-    --orange-light: #ff9d00;
-
-    --red: #d60000;
-    --red-dark: #650000;
-
-    --purple: #5d20a8;
-}
-
 body {
-    font-family: "Poppins", sans-serif;
-    background: var(--black);
-    color: var(--white);
-    line-height: 1.7;
+    background: #070707;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
 }
 
 a {
@@ -41,836 +24,702 @@ a {
     color: inherit;
 }
 
-section {
-    scroll-margin-top: 80px;
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
 }
 
 
-/* =========================
-   MENU
-========================= */
+/* =========================================
+   CABEÇALHO
+========================================= */
 
 .header {
+    height: 70px;
+
     position: fixed;
     top: 0;
+    left: 0;
+
     width: 100%;
+
     z-index: 1000;
 
-    background: rgba(3, 5, 10, 0.92);
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid rgba(0, 170, 255, 0.2);
-}
-
-.navbar {
-    max-width: 1200px;
-    margin: auto;
-
-    height: 75px;
-
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    padding: 0 25px;
+    padding: 0 5%;
+
+    background: rgba(5, 5, 5, 0.96);
+
+    border-bottom: 1px solid #242424;
 }
 
 .logo {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 800;
-    font-size: 20px;
-    letter-spacing: 2px;
-}
+    color: #ff6500;
 
-.logo span {
-    color: var(--blue);
+    font-size: 22px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
 }
 
 .menu {
     display: flex;
-    list-style: none;
-    gap: 25px;
+    gap: 28px;
 }
 
 .menu a {
-    font-size: 14px;
-    font-weight: 600;
-    color: #ddd;
+    color: #999;
+
+    font-size: 13px;
 
     transition: 0.3s;
 }
 
 .menu a:hover {
-    color: var(--blue);
+    color: #ff6500;
 }
 
 
-/* =========================
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero {
     min-height: 100vh;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
     position: relative;
+
     overflow: hidden;
 
-    padding: 120px 8% 80px;
+    padding: 100px 5%;
 
     background:
-        radial-gradient(circle at 15% 50%, rgba(0, 93, 255, 0.35), transparent 30%),
-        radial-gradient(circle at 85% 50%, rgba(255, 80, 0, 0.3), transparent 30%),
-        linear-gradient(120deg, #02050b, #080b13 50%, #080303);
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(255, 70, 0, 0.25),
+            transparent 25%
+        ),
+        linear-gradient(
+            115deg,
+            #050505 50%,
+            #180b05
+        );
 }
 
 .hero::before {
     content: "";
 
     position: absolute;
-    inset: 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent 49%,
-            rgba(255,255,255,0.08) 50%,
-            transparent 51%
-        );
+    width: 500px;
+    height: 500px;
 
-    opacity: 0.2;
+    right: -200px;
+    top: 20%;
+
+    border-radius: 50%;
+
+    background: #ff4d00;
+
+    opacity: 0.08;
+
+    box-shadow: 0 0 100px #ff4d00;
 }
 
 .hero-content {
-    max-width: 800px;
-    text-align: center;
     position: relative;
     z-index: 2;
+
+    max-width: 750px;
 }
 
-.small-title {
-    color: var(--blue-light);
-    font-weight: 700;
-    letter-spacing: 4px;
-    font-size: 13px;
+.subtitle {
+    color: #ff6500;
+
+    font-size: 12px;
+
+    letter-spacing: 6px;
+
     margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-family: "Orbitron", sans-serif;
-    font-size: clamp(45px, 8vw, 100px);
-    line-height: 1;
+    font-size: clamp(70px, 12vw, 150px);
 
-    text-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
-}
+    line-height: 0.85;
 
-.hero h1 span {
-    color: var(--orange);
-    font-size: 0.55em;
-}
+    letter-spacing: -8px;
 
-.hero-text {
-    color: #cbd2dd;
-    max-width: 650px;
-    margin: 30px auto;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 13px 25px;
-    border-radius: 5px;
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: translateY(-4px);
-}
-
-.btn.blue {
-    background: var(--blue);
-    color: #00111d;
-    box-shadow: 0 0 20px rgba(0, 170, 255, 0.35);
-}
-
-.btn.orange {
-    background: var(--orange);
-    color: white;
-    box-shadow: 0 0 20px rgba(255, 101, 0, 0.35);
-}
-
-.hero-symbol {
-    position: absolute;
-    right: 7%;
-    opacity: 0.15;
-}
-
-.circle-sharingan {
-    width: 300px;
-    height: 300px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 10px solid #550000;
-
-    font-size: 80px;
-
-    color: #ff0000;
-
-    box-shadow:
-        0 0 50px #8b0000,
-        inset 0 0 50px #8b0000;
-}
-
-
-/* =========================
-   SEÇÕES
-========================= */
-
-.section {
-    padding: 110px 8%;
-    max-width: 1400px;
-    margin: auto;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title > p:first-child {
-    color: var(--blue);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 4px;
-}
-
-.section-title h2 {
-    font-family: "Orbitron", sans-serif;
-    font-size: clamp(30px, 5vw, 55px);
-    margin-top: 10px;
-}
-
-.section-title h2 span {
-    color: var(--blue);
-}
-
-.subtitle {
-    color: var(--gray);
-    max-width: 650px;
-    margin: 15px auto;
-}
-
-
-/* =========================
-   FUTEBOL
-========================= */
-
-.football-section {
-    background:
-        radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.15), transparent 30%);
-}
-
-.football-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.football-text h3 {
-    color: var(--blue-light);
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.football-text p {
-    color: var(--gray);
-    margin-bottom: 18px;
-}
-
-.stats {
-    display: flex;
-    gap: 15px;
-    margin-top: 35px;
-}
-
-.stats div {
-    min-width: 120px;
-    padding: 20px;
-
-    text-align: center;
-
-    background: #080d16;
-
-    border: 1px solid rgba(0, 170, 255, 0.3);
-    border-radius: 8px;
-}
-
-.stats strong {
-    display: block;
-    font-size: 28px;
-}
-
-.stats span {
-    font-size: 12px;
-    color: var(--gray);
-}
-
-.football-card {
-    padding: 60px 30px;
-    text-align: center;
-
-    border-radius: 15px;
-
-    background:
-        linear-gradient(145deg, #07182d, #020306);
-
-    border: 1px solid var(--blue);
-
-    box-shadow:
-        0 0 35px rgba(0, 119, 255, 0.15);
-}
-
-.ball {
-    font-size: 80px;
-    margin-bottom: 15px;
-}
-
-.football-card h3 {
-    font-family: "Orbitron", sans-serif;
-    font-size: 30px;
-    color: var(--blue);
-}
-
-.football-card p {
-    color: var(--gray);
-}
-
-
-/* =========================
-   GRÊMIO
-========================= */
-
-.gremio-section {
-    max-width: none;
-
-    background:
-        linear-gradient(
-            135deg,
-            #02060b 0%,
-            #001a36 50%,
-            #030507 100%
-        );
-
-    position: relative;
-}
-
-.gremio-grid {
-    max-width: 1200px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.gremio-intro {
-    text-align: center;
-}
-
-.gremio-symbol {
-    width: 130px;
-    height: 130px;
-
-    margin: 0 auto 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    font-family: "Orbitron", sans-serif;
-    font-size: 70px;
-    font-weight: 800;
-
-    color: white;
-
-    border: 8px solid white;
-
-    background: linear-gradient(
-        #00aaff 0 33%,
-        #050505 33% 66%,
-        #eeeeee 66%
-    );
-
-    box-shadow: 0 0 30px rgba(0, 170, 255, 0.4);
-}
-
-.gremio-intro h3 {
-    font-family: "Orbitron", sans-serif;
-    color: var(--blue);
-    margin-bottom: 20px;
-}
-
-.gremio-intro p {
-    color: #c2cad5;
-    margin-bottom: 15px;
-}
-
-.gremio-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-.info-card {
-    padding: 25px;
-
-    background: rgba(0, 0, 0, 0.45);
-
-    border: 1px solid rgba(0, 170, 255, 0.3);
-    border-radius: 10px;
-
-    transition: 0.3s;
-}
-
-.info-card:hover {
-    transform: translateY(-7px);
-
-    border-color: var(--blue);
-
-    box-shadow: 0 10px 30px rgba(0, 140, 255, 0.2);
-}
-
-.info-card span {
-    font-size: 30px;
-}
-
-.info-card h3 {
-    font-family: "Orbitron", sans-serif;
-    margin: 8px 0;
-}
-
-.info-card p {
-    color: var(--gray);
-    font-size: 13px;
-}
-
-
-/* =========================
-   NARUTO
-========================= */
-
-.naruto-section {
-    max-width: none;
-
-    position: relative;
-    overflow: hidden;
-
-    background:
-        radial-gradient(circle at 20% 40%, rgba(255, 100, 0, 0.18), transparent 30%),
-        radial-gradient(circle at 80% 60%, rgba(190, 0, 0, 0.2), transparent 30%),
-        #080303;
-}
-
-.naruto-title h2 span {
-    color: var(--orange);
-}
-
-.naruto-title > p:first-child {
-    color: var(--orange);
-}
-
-.naruto-content {
-    max-width: 1200px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-
-    gap: 70px;
-
-    align-items: center;
-}
-
-.naruto-text h3 {
-    color: var(--orange);
-    font-size: 24px;
     margin-bottom: 25px;
 }
 
-.naruto-text p {
-    color: #c8c1bd;
-    margin-bottom: 18px;
+.hero h1 span {
+    display: block;
+
+    color: #ff6500;
+
+    font-size: 0.55em;
+
+    letter-spacing: 2px;
 }
 
-.naruto-card {
+.hero-text {
+    color: #999;
+
+    max-width: 600px;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    background: #ff6500;
+
+    color: #ffffff;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #ff8a3d;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   SEÇÕES
+========================================= */
+
+section {
+    padding: 110px 0;
+}
+
+.section-tag {
+    color: #ff6500;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+}
+
+section h2 {
+    font-size: clamp(35px, 5vw, 55px);
+
+    line-height: 1.1;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================================
+   INTRODUÇÃO
+========================================= */
+
+.intro {
+    background: #0b0b0b;
+
     text-align: center;
-
-    padding: 55px 30px;
-
-    border: 1px solid var(--orange);
-
-    border-radius: 15px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #271005,
-            #080303
-        );
-
-    box-shadow: 0 0 40px rgba(255, 80, 0, 0.12);
 }
 
-.naruto-logo {
-    font-size: 90px;
-    margin-bottom: 15px;
+.intro h2 {
+    margin-bottom: 25px;
 }
 
-.naruto-card h3 {
-    font-family: "Orbitron", sans-serif;
-    color: var(--orange);
-}
+.intro-text {
+    max-width: 750px;
 
-.naruto-card p {
-    color: var(--gray);
+    margin: 0 auto 18px;
+
+    color: #999;
+
+    line-height: 1.9;
 }
 
 
-/* =========================
+/* =========================================
    PERSONAGENS
-========================= */
+========================================= */
 
-.characters-section {
-    max-width: none;
-    background: #030406;
+.characters {
+    background: #050505;
 }
 
-.characters-grid {
-    max-width: 1250px;
-    margin: auto;
-
+.character-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
 
-    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 15px;
 }
 
-.character-card {
+.card {
+    min-height: 400px;
+
     position: relative;
-    overflow: hidden;
 
-    min-height: 500px;
+    padding: 28px 20px;
 
-    padding: 35px 25px;
+    background: #101010;
 
-    border-radius: 12px;
+    border: 1px solid #242424;
 
-    background: #0b0d12;
+    border-top: 4px solid;
 
     transition: 0.4s;
 }
 
-.character-card:hover {
-    transform: translateY(-12px);
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-.character-number {
+.card-number {
     position: absolute;
-    top: 15px;
-    right: 20px;
 
-    font-family: "Orbitron", sans-serif;
-    font-size: 35px;
+    top: 10px;
+    right: 15px;
 
-    opacity: 0.15;
+    color: #333;
+
+    font-size: 28px;
+
+    font-weight: bold;
 }
 
 .character-icon {
-    font-size: 65px;
-    margin-bottom: 20px;
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    margin-bottom: 25px;
+
+    font-size: 32px;
 }
 
-.character-card h3 {
-    font-family: "Orbitron", sans-serif;
+.card h3 {
     font-size: 25px;
+
     margin-bottom: 5px;
 }
 
-.character-card h4 {
-    font-size: 11px;
-    letter-spacing: 1px;
+.card .role {
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #777;
+
     margin-bottom: 20px;
 }
 
-.character-card p {
-    color: #aeb5c0;
-    font-size: 14px;
-}
+.card > p:last-child {
+    color: #888;
 
-.character-tag {
-    display: inline-block;
+    font-size: 13px;
 
-    margin-top: 25px;
-    padding: 5px 12px;
-
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-    border-radius: 20px;
+    line-height: 1.8;
 }
 
 
-/* Naruto */
+/* NARUTO */
 
-.naruto-card-character {
-    border: 1px solid var(--orange);
+.naruto {
+    border-color: #ff6500;
 }
 
-.naruto-card-character h3,
-.naruto-card-character h4 {
-    color: var(--orange);
+.naruto .character-icon {
+    background: #ff6500;
 }
 
-.naruto-card-character .character-tag {
-    color: var(--orange);
-    border: 1px solid var(--orange);
-}
-
-
-/* Obito */
-
-.obito-card {
-    border: 1px solid #6920a8;
-
-    background:
-        radial-gradient(circle at 50% 0%, rgba(100, 20, 170, 0.25), transparent 50%),
-        #09050e;
-}
-
-.obito-card h3,
-.obito-card h4 {
-    color: #a548ff;
-}
-
-.obito-card .character-tag {
-    color: #b05cff;
-    border: 1px solid #8b2ed1;
-}
-
-.sharingan {
-    color: #e00000;
+.naruto h3 {
+    color: #ff6500;
 }
 
 
-/* Kakashi */
+/* SASUKE */
 
-.kakashi-card {
-    border: 1px solid #4389c9;
-
-    background:
-        radial-gradient(circle at 50% 0%, rgba(50, 130, 210, 0.2), transparent 50%),
-        #060b11;
+.sasuke {
+    border-color: #315bb5;
+    background: #080d18;
 }
 
-.kakashi-card h3,
-.kakashi-card h4 {
-    color: #5eb5ff;
+.sasuke .character-icon {
+    background: #203e7d;
 }
 
-.kakashi-card .character-tag {
-    color: #5eb5ff;
-    border: 1px solid #4389c9;
+.sasuke h3 {
+    color: #5d8dff;
 }
 
 
-/* Itachi */
+/* ITACHI */
 
-.itachi-card {
-    border: 1px solid #9d0000;
-
-    background:
-        radial-gradient(circle at 50% 0%, rgba(170, 0, 0, 0.2), transparent 50%),
-        #0c0303;
+.itachi {
+    border-color: #a00000;
+    background: #100505;
 }
 
-.itachi-card h3,
-.itachi-card h4 {
+.itachi .character-icon {
+    background: #680000;
+}
+
+.itachi h3 {
     color: #ff3030;
 }
 
-.itachi-card .character-tag {
-    color: #ff3d3d;
-    border: 1px solid #a00000;
+
+/* OBITO */
+
+.obito {
+    border-color: #7424a5;
+    background: #0d0712;
 }
 
-.itachi-eye {
-    color: #ff0000;
+.obito .character-icon {
+    background: #45146b;
+}
+
+.obito h3 {
+    color: #b45aff;
 }
 
 
-/* =========================
-   CONEXÃO
-========================= */
+/* KAKASHI */
 
-.connection {
-    padding: 120px 20px;
+.kakashi {
+    border-color: #3988c7;
+    background: #071017;
+}
 
-    text-align: center;
+.kakashi .character-icon {
+    background: #24577c;
+}
 
+.kakashi h3 {
+    color: #61bdff;
+}
+
+
+/* =========================================
+   ITACHI / OBITO
+========================================= */
+
+.dark-section {
     background:
-        linear-gradient(
-            90deg,
-            #001329,
-            #050609 45%,
-            #180700
+        radial-gradient(
+            circle at center,
+            #180000,
+            #080506 55%,
+            #050505
         );
 }
 
-.connection-content {
-    max-width: 800px;
-    margin: auto;
+.story-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
 }
 
-.connection-content > p:first-child {
-    font-size: 40px;
+.story {
+    padding: 45px;
+
+    min-height: 380px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    border: 1px solid #333;
 }
 
-.connection h2 {
-    font-family: "Orbitron", sans-serif;
-    font-size: clamp(30px, 5vw, 55px);
+.story-symbol {
+    display: block;
 
-    margin: 20px 0;
+    font-size: 55px;
 
-    background: linear-gradient(90deg, #00aaff, #ffffff, #ff6500);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-color: transparent;
+    margin-bottom: 20px;
 }
 
-.connection-content > p {
-    color: #bdc5d1;
+.story h3 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
 }
 
-.line {
-    width: 100px;
-    height: 3px;
+.story p {
+    color: #999;
 
-    margin: 30px auto;
+    font-size: 14px;
 
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--orange)
-    );
+    line-height: 1.9;
+
+    margin-bottom: 15px;
 }
 
-.connection span {
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: #777;
+.itachi-story {
+    border-color: #870000;
+}
+
+.itachi-story h3 {
+    color: #ff3030;
+}
+
+.obito-story {
+    border-color: #66208d;
+}
+
+.obito-story h3 {
+    color: #ad50ed;
 }
 
 
-/* =========================
-   RODAPÉ
-========================= */
+/* =========================================
+   COADJUVANTES
+========================================= */
 
-footer {
-    padding: 50px 20px;
+.support {
+    background: #090d13;
+}
+
+.support-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.support-grid article {
+    padding: 25px;
+
+    background: #0e131a;
+
+    border-left: 3px solid #ff6500;
+
+    transition: 0.3s;
+}
+
+.support-grid article:hover {
+    background: #151c25;
+
+    transform: translateX(5px);
+}
+
+.support-grid h3 {
+    color: #ff6500;
+
+    margin-bottom: 8px;
+}
+
+.support-grid p {
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   TIME 7
+========================================= */
+
+.team {
+    background: #050505;
+}
+
+.team-box {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border: 1px solid #292929;
+}
+
+.team-box div {
+    padding: 35px 20px;
 
     text-align: center;
 
-    background: #020305;
-
-    border-top: 1px solid #151b24;
+    border-right: 1px solid #292929;
 }
 
-.footer-logo {
-    font-size: 35px;
+.team-box div:last-child {
+    border-right: none;
 }
 
-.footer-logo span {
-    color: #555;
-    margin: 0 10px;
+.team-box strong {
+    display: block;
+
+    color: #ff6500;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
 }
 
-footer h3 {
-    font-family: "Orbitron", sans-serif;
-    margin: 10px 0;
-}
+.team-box span {
+    color: #777;
 
-footer p {
-    color: #89919e;
-}
-
-.copyright {
-    margin-top: 25px;
     font-size: 12px;
 }
 
 
-/* =========================
-   RESPONSIVIDADE
-========================= */
+/* =========================================
+   FINAL
+========================================= */
 
-@media (max-width: 1000px) {
+.final {
+    min-height: 500px;
 
-    .menu {
-        gap: 12px;
-    }
+    display: flex;
 
-    .menu a {
-        font-size: 12px;
-    }
+    flex-direction: column;
 
-    .characters-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    justify-content: center;
 
-    .football-content,
-    .naruto-content,
-    .gremio-grid {
-        grid-template-columns: 1fr;
-    }
+    align-items: center;
 
-    .hero-symbol {
-        display: none;
-    }
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #3a1300,
+            #080808 65%
+        );
+}
+
+.final p {
+    max-width: 600px;
+
+    color: #aaa;
+
+    font-size: 18px;
+
+    margin-bottom: 25px;
+}
+
+.final h2 {
+    color: #ff6500;
+
+    font-size: clamp(45px, 8vw, 85px);
+
+    margin-bottom: 10px;
+}
+
+.final span {
+    color: #666;
+
+    font-size: 13px;
 }
 
 
-@media (max-width: 650px) {
+/* =========================================
+   RODAPÉ
+========================================= */
 
-    .navbar {
+footer {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #020202;
+
+    border-top: 1px solid #222;
+}
+
+footer p {
+    color: #555;
+
+    font-size: 12px;
+
+    margin: 5px;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .character-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-box div:nth-child(2) {
+        border-right: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
         height: auto;
-        padding: 15px;
+
+        padding: 18px;
+
         flex-direction: column;
+
         gap: 15px;
     }
 
     .menu {
+        gap: 12px;
+
         flex-wrap: wrap;
+
         justify-content: center;
+    }
+
+    .menu a {
+        font-size: 11px;
     }
 
     .hero {
@@ -878,27 +727,34 @@ footer p {
     }
 
     .hero h1 {
-        font-size: 45px;
+        letter-spacing: -4px;
     }
 
-    .stats {
-        flex-direction: column;
+    section {
+        padding: 80px 0;
     }
 
-    .gremio-info,
-    .characters-grid {
+    .character-grid,
+    .support-grid {
         grid-template-columns: 1fr;
     }
 
-    .section {
-        padding: 80px 20px;
+    .story {
+        padding: 30px;
     }
 
-    .connection {
-        padding: 80px 20px;
+    .team-box {
+        grid-template-columns: 1fr;
     }
 
-    .connection span {
-        line-height: 2;
+    .team-box div {
+        border-right: none;
+
+        border-bottom: 1px solid #292929;
     }
+
+    .team-box div:last-child {
+        border-bottom: none;
+    }
+
 }
