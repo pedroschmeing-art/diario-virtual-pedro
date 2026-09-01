@@ -1,0 +1,1435 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #030303;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================================
+   FUNDO GERAL
+===================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -10;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 90, 0, .15),
+            transparent 23%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(60, 100, 255, .14),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(220, 0, 0, .12),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(150, 50, 220, .13),
+            transparent 25%
+        ),
+
+        #030303;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 15px;
+    left: 3%;
+    right: 3%;
+
+    height: 65px;
+
+    padding: 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    background: rgba(3, 3, 3, .9);
+
+    border: 1px solid #ff5a00;
+
+    box-shadow:
+        0 0 0 4px #030303,
+        0 0 0 5px rgba(255, 90, 0, .35),
+        0 15px 40px rgba(0, 0, 0, .7);
+
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-weight: 900;
+
+    font-size: 17px;
+
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #ff5a00;
+
+    font-size: 27px;
+
+    margin-right: 5px;
+}
+
+nav {
+    display: flex;
+
+    gap: 28px;
+}
+
+nav a {
+    position: relative;
+
+    color: #888;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ff5a00;
+
+    transition: .3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.vila {
+    color: #ff5a00;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            110deg,
+            #030303 20%,
+            #0b0705 55%,
+            #030303
+        );
+
+    border-bottom: 2px solid #ff5a00;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .08;
+
+    background-image:
+        linear-gradient(#fff 1px, transparent 1px),
+        linear-gradient(90deg, #fff 1px, transparent 1px);
+
+    background-size: 70px 70px;
+}
+
+.hero-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+.orange-glow {
+    width: 550px;
+    height: 550px;
+
+    right: -150px;
+    top: 20%;
+
+    background: #ff5a00;
+
+    opacity: .22;
+}
+
+.blue-glow {
+    width: 350px;
+    height: 350px;
+
+    left: -100px;
+    bottom: 0;
+
+    background: #345cff;
+
+    opacity: .13;
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 50px;
+
+    border-left: 3px solid #ff5a00;
+
+    border-bottom: 3px solid #ff5a00;
+
+    background: rgba(0, 0, 0, .3);
+
+    box-shadow:
+        -12px 12px 0 #080808,
+        -14px 14px 0 rgba(255, 90, 0, .45);
+}
+
+.japanese {
+    color: #ff5a00;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(85px, 15vw, 190px);
+
+    line-height: .7;
+
+    letter-spacing: -12px;
+
+    font-weight: 900;
+
+    color: #fff;
+
+    text-shadow:
+        7px 7px 0 #ff5a00,
+        12px 12px 0 #000;
+}
+
+.hero h2 {
+    margin-top: 45px;
+
+    font-size: 15px;
+
+    letter-spacing: 8px;
+
+    color: #ddd;
+}
+
+.hero-description {
+    max-width: 500px;
+
+    margin-top: 25px;
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.hero-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 35px;
+
+    padding: 17px 25px;
+
+    color: #000;
+
+    background: #ff5a00;
+
+    border: 3px solid #000;
+
+    outline: 1px solid #ff5a00;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.hero-button span {
+    font-size: 18px;
+}
+
+.hero-button:hover {
+    background: #fff;
+
+    outline-color: #fff;
+
+    transform: translateY(-5px);
+}
+
+.hero-number {
+    position: absolute;
+
+    right: 5%;
+    bottom: 50px;
+
+    color: #333;
+
+    font-size: 70px;
+
+    font-weight: 900;
+}
+
+.hero-label {
+    position: absolute;
+
+    right: 5%;
+    top: 45%;
+
+    writing-mode: vertical-rl;
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+    position: relative;
+
+    padding: 130px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    background:
+        linear-gradient(
+            130deg,
+            #070707,
+            #10131c,
+            #070707
+        );
+
+    border-bottom: 2px solid #111;
+}
+
+.intro-title p,
+.section-heading p,
+.support-title p {
+    color: #ff5a00;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.intro-title h2 {
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: .9;
+}
+
+.intro-title h2 span {
+    display: block;
+
+    color: #ff5a00;
+
+    text-shadow:
+        3px 3px 0 #000;
+}
+
+.intro-text {
+    padding: 35px;
+
+    border: 1px solid #252525;
+
+    border-left: 4px solid #4c75ff;
+
+    background: rgba(0, 0, 0, .35);
+
+    box-shadow:
+        8px 8px 0 #ff5a00;
+}
+
+.intro-text p {
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+.intro-line {
+    width: 100px;
+
+    height: 3px;
+
+    margin: 30px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff5a00,
+            #4c75ff
+        );
+}
+
+.intro-text small {
+    color: #555;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   PERSONAGENS
+===================================================== */
+
+.characters-section {
+    padding: 130px 5%;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 90, 0, .08),
+            transparent 35%
+        ),
+
+        #050505;
+}
+
+.section-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: .85;
+
+    text-shadow:
+        4px 4px 0 #111;
+}
+
+.section-heading h2 span {
+    display: block;
+
+    color: #ff5a00;
+}
+
+.counter {
+    color: #444;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   GRID DOS PERSONAGENS
+===================================================== */
+
+.characters-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 12px;
+}
+
+.character {
+    height: 570px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #090909;
+
+    border: 2px solid #151515;
+
+    box-shadow:
+        8px 8px 0 #000;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+.character:hover {
+    transform: translateY(-12px);
+
+    border-color: var(--color);
+
+    box-shadow:
+        8px 8px 0 var(--color),
+        0 0 35px var(--glow);
+}
+
+.character::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 5;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background: var(--color);
+
+    box-shadow:
+        0 0 15px var(--color);
+}
+
+.character-image {
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition: .6s;
+}
+
+.character:hover .character-image {
+    transform: scale(1.08);
+}
+
+.character-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 30%,
+            rgba(0, 0, 0, .15) 50%,
+            #000 100%
+        );
+}
+
+.character-number {
+    position: absolute;
+
+    z-index: 6;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 7px 10px;
+
+    background: #000;
+
+    border: 1px solid var(--color);
+
+    color: white;
+
+    font-size: 10px;
+}
+
+.character-info {
+    position: absolute;
+
+    z-index: 6;
+
+    bottom: 25px;
+
+    left: 25px;
+    right: 25px;
+}
+
+.character-info > span {
+    color: #aaa;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+.character-info h3 {
+    margin: 8px 0;
+
+    color: var(--color);
+
+    font-size: 36px;
+
+    text-shadow:
+        2px 2px 0 #000;
+}
+
+.character-info p {
+    color: #aaa;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CORES
+===================================================== */
+
+.naruto {
+    --color: #ff6500;
+    --glow: rgba(255, 101, 0, .5);
+}
+
+.sasuke {
+    --color: #557cff;
+    --glow: rgba(85, 124, 255, .5);
+}
+
+.itachi {
+    --color: #ed1c24;
+    --glow: rgba(237, 28, 36, .5);
+}
+
+.obito {
+    --color: #b44de5;
+    --glow: rgba(180, 77, 229, .5);
+}
+
+.kakashi {
+    --color: #58c7ff;
+    --glow: rgba(88, 199, 255, .5);
+}
+
+
+/* =====================================================
+   IMAGENS
+===================================================== */
+
+.naruto-image {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 90, 0, .3),
+            transparent
+        ),
+        url("https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=900&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.sasuke-image {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(50, 80, 255, .35),
+            transparent
+        ),
+        url("https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=900&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.itachi-image {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(200, 0, 0, .4),
+            transparent
+        ),
+        url("https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=900&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.obito-image {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(150, 40, 220, .4),
+            transparent
+        ),
+        url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=900&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.kakashi-image {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(50, 180, 255, .35),
+            transparent
+        ),
+        url("https://images.unsplash.com/photo-1541560052-77ec1bbc09f7?auto=format&fit=crop&w=900&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* =====================================================
+   UCHIHA
+===================================================== */
+
+.uchiha-section {
+    min-height: 720px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(220, 0, 0, .3),
+            transparent 30%
+        ),
+
+        #080000;
+
+    border-top: 3px solid #b50000;
+
+    border-bottom: 3px solid #000;
+}
+
+.uchiha-pattern {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .08;
+
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            #ff0000 0,
+            #ff0000 1px,
+            transparent 1px,
+            transparent 30px
+        );
+}
+
+.uchiha-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 60px;
+
+    border: 1px solid #450000;
+
+    border-left: 5px solid #e00000;
+
+    background: rgba(10, 0, 0, .55);
+
+    box-shadow:
+        15px 15px 0 #000,
+        15px 15px 0 rgba(150, 0, 0, .35);
+}
+
+.uchiha-content > p:first-child {
+    color: #ff3030;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+}
+
+.uchiha-content h2 {
+    max-width: 800px;
+
+    margin: 25px 0;
+
+    font-size: clamp(60px, 9vw, 120px);
+
+    line-height: .8;
+}
+
+.uchiha-content h2 span {
+    color: #d00000;
+
+    display: block;
+
+    text-shadow:
+        4px 4px 0 #000;
+}
+
+.uchiha-text {
+    max-width: 550px;
+
+    color: #999;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.uchiha-members {
+    display: flex;
+
+    gap: 60px;
+
+    margin-top: 50px;
+}
+
+.uchiha-members div {
+    padding-left: 15px;
+
+    border-left: 2px solid #d00000;
+}
+
+.uchiha-members strong {
+    display: block;
+
+    color: #900;
+
+    font-size: 30px;
+}
+
+.uchiha-members span {
+    color: #ddd;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+.sharingan {
+    position: absolute;
+
+    right: 8%;
+
+    font-size: 300px;
+
+    color: #a00000;
+
+    opacity: .12;
+
+    text-shadow:
+        0 0 50px #f00;
+}
+
+
+/* =====================================================
+   STORIES
+===================================================== */
+
+.stories {
+    padding: 130px 7%;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(160, 50, 220, .12),
+            transparent 25%
+        ),
+
+        #060606;
+}
+
+.stories-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.story-card {
+    min-height: 350px;
+
+    padding: 35px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #070707
+        );
+
+    border: 1px solid #242424;
+
+    border-top: 4px solid var(--story-color);
+
+    box-shadow:
+        8px 8px 0 #000;
+
+    transition: .3s;
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        8px 8px 0 var(--story-color);
+}
+
+.story-card > span {
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+.story-card h3 {
+    margin-top: 80px;
+
+    margin-bottom: 20px;
+
+    color: var(--story-color);
+
+    font-size: 27px;
+}
+
+.story-card p {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+.itachi-card {
+    --story-color: #ed2024;
+}
+
+.obito-card {
+    --story-color: #b34de0;
+}
+
+.sasuke-card {
+    --story-color: #4d79ff;
+}
+
+
+/* =====================================================
+   COADJUVANTES
+===================================================== */
+
+.support-section {
+    padding: 130px 7%;
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(60, 150, 255, .12),
+            transparent 28%
+        ),
+
+        #070c12;
+
+    border-top: 2px solid #16283c;
+}
+
+.support-title h2 {
+    max-width: 850px;
+
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: .9;
+
+    margin-bottom: 60px;
+}
+
+.support-title h2 span {
+    display: block;
+
+    color: #58c7ff;
+}
+
+.support-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border: 1px solid #26384d;
+}
+
+.support-grid div {
+    min-height: 140px;
+
+    padding: 30px;
+
+    background: rgba(5, 15, 25, .6);
+
+    border-right: 1px solid #26384d;
+
+    border-bottom: 1px solid #26384d;
+
+    transition: .3s;
+}
+
+.support-grid div:hover {
+    background: #0d1c2c;
+
+    box-shadow:
+        inset 0 -3px 0 #58c7ff;
+}
+
+.support-grid strong {
+    display: block;
+
+    color: white;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.support-grid span {
+    color: #52708b;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final-section {
+    min-height: 650px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 90, 0, .22),
+            transparent 32%
+        ),
+
+        #030303;
+
+    border-top: 3px solid #ff5a00;
+}
+
+.final-circle {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(255, 90, 0, .3);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 50px rgba(255, 90, 0, .025),
+        0 0 0 100px rgba(255, 90, 0, .018);
+}
+
+.final-section > p {
+    position: relative;
+
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+}
+
+.final-section h2 {
+    position: relative;
+
+    margin: 25px 0;
+
+    font-size: clamp(70px, 12vw, 150px);
+
+    line-height: .75;
+
+    letter-spacing: -8px;
+
+    text-shadow:
+        5px 5px 0 #000;
+}
+
+.final-section h2 span {
+    display: block;
+
+    color: #ff5a00;
+}
+
+.final-line {
+    position: relative;
+
+    width: 100px;
+
+    height: 2px;
+
+    background: #ff5a00;
+
+    margin: 20px 0;
+}
+
+.final-section small {
+    position: relative;
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    min-height: 100px;
+
+    padding: 30px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: #020202;
+
+    border-top: 1px solid #222;
+}
+
+.footer-logo {
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+.footer-logo span {
+    color: #ff5a00;
+}
+
+footer p {
+    color: #444;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    nav {
+        gap: 15px;
+    }
+
+    .vila {
+        display: none;
+    }
+
+    .characters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sharingan {
+        right: -100px;
+
+        font-size: 250px;
+    }
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        top: 5px;
+
+        left: 2%;
+        right: 2%;
+
+        height: auto;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        gap: 10px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 8px;
+    }
+
+    .hero {
+        min-height: 850px;
+    }
+
+    .hero-content {
+        width: 88%;
+
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 75px;
+
+        letter-spacing: -5px;
+
+        text-shadow:
+            4px 4px 0 #ff5a00;
+    }
+
+    .hero h2 {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-label {
+        display: none;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 90px 8%;
+    }
+
+    .intro-text {
+        box-shadow:
+            5px 5px 0 #ff5a00;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .counter {
+        display: block;
+
+        margin-top: 20px;
+    }
+
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .character {
+        height: 500px;
+    }
+
+    .uchiha-section {
+        min-height: 750px;
+    }
+
+    .uchiha-content {
+        padding: 30px;
+    }
+
+    .uchiha-members {
+        gap: 20px;
+    }
+
+    .sharingan {
+        opacity: .06;
+
+        right: -150px;
+
+        font-size: 300px;
+    }
+
+    .stories {
+        padding: 90px 7%;
+    }
+
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+}
